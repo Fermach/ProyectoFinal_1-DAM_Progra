@@ -1,0 +1,82 @@
+package Modelo.DAO;
+
+import java.util.List;
+
+import Modelo.DTO.Jugador;
+import Modelo.DTO.Personaje;
+
+public class DAO implements IDAO {
+
+	@Override
+	public List<Personaje> listaPersonajes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Jugador> listaJugadores() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Personaje> listaGuerreros() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Personaje> listaMagos() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Personaje> listaPicaros() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Jugador> jugadoresNivelAlto() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean existeJugador() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean añadirJugador() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean borrarJugador() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean existePersonaje() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean añadirPersonaje() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean borrarPersonaje() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

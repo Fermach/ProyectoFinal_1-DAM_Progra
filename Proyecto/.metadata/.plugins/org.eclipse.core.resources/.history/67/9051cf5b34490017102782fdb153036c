@@ -1,0 +1,67 @@
+package Modelo.DTO;
+
+public class Personaje {
+
+	String nombre;
+	String login;
+	String tipo;
+	String raza;
+	String sexo;
+	
+	String Personaje(String nombre, String login, String tipo, String raza, String sexo) {
+		
+		this.nombre = nombre;
+		this.login = login;
+		this.tipo = tipo;
+		this.raza = raza;
+		this.sexo = sexo;
+	}
+
+	@Override
+	public String toString() {
+		return "Personaje [nombre=" + nombre + ", login=" + login + ", tipo=" + tipo + ", raza=" + raza + ", sexo="
+				+ sexo + "]";
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public Tipo getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(Tipo tipo) {
+		this.tipo = tipo;
+	}
+
+	public Raza getRaza() {
+		return raza;
+	}
+
+	public void setRaza(Raza raza) {
+		this.raza = raza;
+	}
+
+	public Sexo getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(Sexo sexo) {
+		this.sexo = sexo;
+	}
+	
+
+}

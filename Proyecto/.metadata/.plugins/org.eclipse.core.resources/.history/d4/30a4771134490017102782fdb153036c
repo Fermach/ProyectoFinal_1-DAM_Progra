@@ -1,0 +1,7 @@
+package Modelo.DTO;
+
+public enum Sexo {
+   
+	 hombre, mujer
+	 
+}

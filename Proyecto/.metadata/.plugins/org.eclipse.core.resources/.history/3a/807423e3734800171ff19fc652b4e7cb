@@ -1,0 +1,5 @@
+package Modelo.DTO;
+
+public enum Raza {
+
+}
