@@ -5,8 +5,15 @@ CREATE VIEW mostrar_jugadores_con_mas_nivel AS select * from jugadores where niv
 
 
 CREATE TRIGGER borrado BEFORE DELETE
-ON alumno
+ON jugadores
 BEGIN
 INSERT INTO historial (login, nombre, apellidos, nivel, nacionalidad, fecha_baja)
-VALUES (old.login, old.nombre, old.apellidos, old.nivel, old.nacionalidad, datetime(’now’));
+VALUES (old.login, old.nombre, old.apellidos, old.nivel, old.nacionalidad, datetime('now'));
 END;
+CREATE TRIGGER personajeNuevo BEFORE INSERT
+ON jugadores
+BEGIN
+INSERT INTO personajes (nombre,login, tipo, raza, sexo)
+VALUES ("", new.login, "", "", "");
+END;
+

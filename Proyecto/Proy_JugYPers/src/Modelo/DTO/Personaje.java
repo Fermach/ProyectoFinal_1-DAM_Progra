@@ -22,7 +22,7 @@ public class Personaje {
 	@Override
 	public String toString() {
 		return "Personaje [nombre=" + nombre + ", login=" + login + ", tipo=" + tipo + ", raza=" + raza + ", sexo="
-				+ sexo + "]";
+				+ sexo + "]"+"\n";
 	}
 
 	public String getNombre() {

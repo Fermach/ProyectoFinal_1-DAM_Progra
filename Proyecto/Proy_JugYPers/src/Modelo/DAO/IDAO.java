@@ -23,5 +23,6 @@ public interface IDAO {
 	boolean existePersonaje(Personaje p);
 	boolean añadirPersonaje(Personaje p);
 	boolean borrarPersonaje(Personaje p);
+	boolean modificarPersonaje(Personaje p);
 	
 }

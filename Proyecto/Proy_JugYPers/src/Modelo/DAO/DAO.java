@@ -18,13 +18,24 @@ public class DAO implements IDAO {
 	private Connection conex= Conexion.getInstance();
 	private Statement state;
 	private PreparedStatement pre;
-	
+	String sql ;
 	
 	//MAIN PARA PRUEBAS
 	public static void main(String[] args) {
+		DAO dao = new DAO();
 		
-		
-		
+		Jugador ju =new Jugador("kain566", "Pepe", "Ramirez", "alto", "ES");
+		Personaje p =new Personaje("kain", "kain566", "mago", "elfo", "M");
+		//System.out.println(dao.listaPersonajes());
+		//System.out.println(dao.listaGuerreros());
+	   //dao.añadirJugador(ju);
+	    //dao.añadirPersonaje(p);
+	    System.out.println(dao.listaJugadores());
+	     System.out.println(dao.listaPersonajes());
+        //System.out.println(dao.jugadoresAntiguos());
+	    //dao.borrarJugador(ju);
+	    //dao.borrarPersonaje(p);
+	    
 	}
 	
 	
@@ -33,7 +44,7 @@ public class DAO implements IDAO {
 	public List<Personaje> listaPersonajes() {
 		// TODO Auto-generated method stub
 		List<Personaje> listaPersonajes = new ArrayList<>();
-		String sql = "SELECT * FROM Personajes ORDER BY nombre";
+		sql= "SELECT * FROM personajes ORDER BY nombre";
 		try {
 		    state =conex.createStatement();
 		    ResultSet resulset = state.executeQuery(sql);
@@ -57,19 +68,19 @@ public class DAO implements IDAO {
 	public List<Jugador> listaJugadores() {
 		// TODO Auto-generated method stub
 		List<Jugador> listaJugadores = new ArrayList<>();
-		String sql = "SELECT * FROM Jugadores ORDER BY login";
+	sql = "select * from jugadores order by login";
 		try {
 		    state =conex.createStatement();
 		    ResultSet resulset = state.executeQuery(sql);
 			while(resulset.next()){
 				String login = resulset.getString("login");
-				String nivel = resulset.getString("nivel");
 				String nombre = resulset.getString("nombre");
 				String apellidos = resulset.getString("apellidos");
+				String nivel = resulset.getString("nivel");
 				String nacionalidad = resulset.getString("nacionalidad");
 				
 
-				Jugador jugador = new Jugador( login, nivel, nombre, apellidos, nacionalidad);
+				Jugador jugador = new Jugador( login, nombre, apellidos, nivel, nacionalidad);
 				listaJugadores.add(jugador);
 			}
 		} catch (SQLException e) {
@@ -82,7 +93,7 @@ public class DAO implements IDAO {
 	public List<Personaje> listaGuerreros() {
 		// TODO Auto-generated method stub
 		List<Personaje> listaGuerreros = new ArrayList<>();
-		String sql = "SELECT * FROM mostrar_guerreros ORDER BY nombre";
+	    sql = "SELECT * FROM mostrar_guerreros ORDER BY nombre";
 		try {
 		    state =conex.createStatement();
 		    ResultSet resulset = state.executeQuery(sql);
@@ -106,7 +117,7 @@ public class DAO implements IDAO {
 	public List<Personaje> listaMagos() {
 		// TODO Auto-generated method stub
 		List<Personaje> listaMagos = new ArrayList<>();
-		String sql = "SELECT * FROM mostrar_magos ORDER BY nombre";
+	    sql = "SELECT * FROM mostrar_magos ORDER BY nombre";
 		try {
 		    state =conex.createStatement();
 		    ResultSet resulset = state.executeQuery(sql);
@@ -130,7 +141,7 @@ public class DAO implements IDAO {
 	public List<Personaje> listaPicaros() {
 		// TODO Auto-generated method stub
 		List<Personaje> listaPicaros = new ArrayList<>();
-		String sql = "SELECT * FROM mostrar_picaros ORDER BY nombre";
+	    sql = "SELECT * FROM mostrar_picaros ORDER BY nombre";
 		try {
 		    state =conex.createStatement();
 		    ResultSet resulset = state.executeQuery(sql);
@@ -154,13 +165,13 @@ public class DAO implements IDAO {
 	public List<Jugador> jugadoresNivelAlto() {
 		// TODO Auto-generated method stub
 		List<Jugador> listaJugadoresAvanzados = new ArrayList<>();
-		String sql = "SELECT * FROM mostrar_jugadores_con_mas_nivel ORDER BY login";
+		sql = "SELECT * FROM mostrar_jugadores_con_mas_nivel ORDER BY login";
 		try {
 		    state =conex.createStatement();
 		    ResultSet resulset = state.executeQuery(sql);
 			while(resulset.next()){
 				String login = resulset.getString("login");
-				String nivel = resulset.getString("nivel");
+	    		String nivel = resulset.getString("nivel");
 				String nombre = resulset.getString("nombre");
 				String apellidos = resulset.getString("apellidos");
 				String nacionalidad = resulset.getString("nacionalidad");
@@ -192,7 +203,7 @@ public class DAO implements IDAO {
 	public boolean añadirJugador(Jugador j) {
 		boolean exito = false;
 		
-		String sql = "INSERT INTO Jugadores VALUES (?, ? , ?, ?, ?)";
+		sql = "INSERT INTO jugadores VALUES (?, ?, ?, ?, ?)";
 		try {
 			pre = conex.prepareStatement(sql);
 			pre.setString(1, j.getLogin());
@@ -202,8 +213,11 @@ public class DAO implements IDAO {
 			pre.setString(5, j.getNacionalidad());
 
 			int resultado = pre.executeUpdate();
-			if (resultado != 0)
+			if (resultado != 0){
 				exito = true;
+			    System.out.println("Jugador añadido ");
+			}
+				
 		} catch (SQLException e) {
 			System.out.println("Error en la insercción de datos de la BD");
 
@@ -215,13 +229,15 @@ public class DAO implements IDAO {
 	public boolean borrarJugador(Jugador j) {
 		// delete from user where login = "1";
 			boolean exito = false;
-			String sql = "DELETE FROM Jugadores WHERE login = ?";
+			sql = "DELETE FROM jugadores WHERE login = ?";
 			try {
 				pre = conex.prepareStatement(sql);
 				pre.setString(1, j.getLogin());
 				int resultado = pre.executeUpdate();
-				if (resultado != 0)
+				if (resultado != 0){
 					exito = true;
+			        System.out.println("Jugador borrado ");
+				}
 			} catch (SQLException e) {
 				System.out.println("Error en el borrado de datos de la BD");
 
@@ -248,7 +264,7 @@ public class DAO implements IDAO {
       
 		boolean exito = false;
 		
-		String sql = "INSERT INTO Personajes VALUES (?, ? , ?, ?, ?)";
+	    sql = "INSERT INTO personajes VALUES (?, ? , ?, ?, ?)";
 		try {
 			pre = conex.prepareStatement(sql);
 			pre.setString(1, p.getNombre());
@@ -258,8 +274,10 @@ public class DAO implements IDAO {
 			pre.setString(5, p.getSexo());
 
 			int resultado = pre.executeUpdate();
-			if (resultado != 0)
+			if (resultado != 0){
 				exito = true;
+			    System.out.println("personaje añadido ");
+			}
 		} catch (SQLException e) {
 			System.out.println("Error en la insercción de datos de la BD");
 
@@ -271,13 +289,16 @@ public class DAO implements IDAO {
 	public boolean borrarPersonaje(Personaje p) {
 		// TODO Auto-generated method stub
 		boolean exito = false;
-		String sql = "DELETE FROM Personajes WHERE nombre = ?";
+		sql = "DELETE FROM personajes WHERE nombre = ?";
 		try {
 			pre = conex.prepareStatement(sql);
 			pre.setString(1, p.getNombre());
 			int resultado = pre.executeUpdate();
-			if (resultado != 0)
+			if (resultado != 0){
 				exito = true;
+			    System.out.println("Personaje borrado ");
+	
+			}
 		} catch (SQLException e) {
 			
 			System.out.println("Error en el borrado de datos de la BD");
@@ -291,7 +312,7 @@ public class DAO implements IDAO {
 	public List<JugadorAntiguo> jugadoresAntiguos() {
 		// TODO Auto-generated method stub
 				List<JugadorAntiguo> listaJugadoresAntiguos = new ArrayList<>();
-				String sql = "SELECT * FROM historial ORDER BY login";
+			    sql = "SELECT * FROM historial ORDER BY login";
 				try {
 				    state =conex.createStatement();
 				    ResultSet resulset = state.executeQuery(sql);
@@ -310,6 +331,34 @@ public class DAO implements IDAO {
 					System.out.println("Error en la lectura de la BD");
 				}
 				return listaJugadoresAntiguos;
+	}
+
+
+
+	public boolean modificarPersonaje(Personaje p) {
+		// TODO Auto-generated method stub
+		boolean exito = false;
+	
+		sql = "UPDATE personajes SET nombre = ?, tipo = ?, raza = ?, sexo = ? WHERE login = ?";
+		try {
+			pre = conex.prepareStatement(sql);
+			pre.setString(1, p.getNombre());
+			pre.setString(2, p.getTipo());
+			pre.setString(3, p.getRaza());
+			pre.setString(4, p.getSexo());
+			pre.setString(5, p.getLogin());
+
+			int resultado = pre.executeUpdate();
+			if (resultado != 0)
+				exito = true;
+		} catch (SQLException e) {
+			System.out.println("Error en la actualización de datos de la BD");
+
+		}
+		
+		return exito;
+		
+	
 	}
 
 }

@@ -20,7 +20,7 @@ public class JugadorAntiguo extends Jugador {
 	@Override
 	public String toString() {
 		return "JugadorAntiguo [fecha_baja=" + fecha_baja + ", login=" + login + ", nivel=" + nivel + ", nombre="
-				+ nombre + ", apellidos=" + apellidos + ", nacionalidad=" + nacionalidad + "]";
+				+ nombre + ", apellidos=" + apellidos + ", nacionalidad=" + nacionalidad + "]"+"\n";
 	}
 
 }

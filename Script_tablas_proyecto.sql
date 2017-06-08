@@ -23,7 +23,7 @@ FOREIGN KEY(login) REFERENCES jugadores(login) ON UPDATE CASCADE ON DELETE CASCA
 );
 
 
-DROP TABLE IF EXIST historial;
+DROP TABLE IF EXISTS historial;
 CREATE TABLE historial(
         login TEXT NOT NULL,
         nombre TEXT,

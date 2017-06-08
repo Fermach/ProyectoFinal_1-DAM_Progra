@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="G:\DAM\ProyectoProgramacion" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="G:\DAM\ProyectoProgramacion\Proyecto\Proy_JugYPers" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="false" key="OmitCallToSuper"/>
 	</section>
@@ -100,6 +100,9 @@
 		<item value="627" key="DIALOG_HEIGHT"/>
 		<item value="244" key="DIALOG_X_ORIGIN"/>
 		<item value="105" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item value="0" key="index"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
 		<item value="2" key="pageIndex"/>

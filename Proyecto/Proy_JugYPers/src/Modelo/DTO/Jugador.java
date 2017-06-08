@@ -1,14 +1,19 @@
 package Modelo.DTO;
 
-public class Jugador extends Usuario {
+public class Jugador {
 
 	String login;
+	String nombre;
+	String apellidos;
 	String nivel;
+	String nacionalidad;
 	
-	public Jugador(String nombre, String apellidos, String nacionalidad, String login, String nivel) {
-		super(nombre, apellidos, nacionalidad);
-		this.login = login;
-		this.nivel = nivel;
+	public Jugador(String login, String nombre, String apellidos, String nivel, String nacionalidad) {
+	    this.login=login;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.nivel= nivel;
+		this.nacionalidad=nacionalidad;
 	}
 
 	public String getLogin() {
@@ -54,7 +59,7 @@ public class Jugador extends Usuario {
 	@Override
 	public String toString() {
 		return "Jugador [login=" + login + ", nombre=" + nombre + ", apellidos=" + apellidos + ", nivel=" + nivel
-				+ ", nacionalidad=" + nacionalidad + "]";
+				+ ", nacionalidad=" + nacionalidad + "]"+"\n";
 	}
 	
 	
