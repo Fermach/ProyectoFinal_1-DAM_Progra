@@ -1,0 +1,14 @@
+package Vista;
+
+import javax.swing.JPanel;
+
+public class TablaJugadoresAltoNivel extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public TablaJugadoresAltoNivel() {
+
+	}
+
+}

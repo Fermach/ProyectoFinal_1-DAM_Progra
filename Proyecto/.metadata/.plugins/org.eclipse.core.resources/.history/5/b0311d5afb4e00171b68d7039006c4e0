@@ -1,0 +1,14 @@
+package Vista;
+
+import javax.swing.JPanel;
+
+public class TablaHistorial extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public TablaHistorial() {
+
+	}
+
+}

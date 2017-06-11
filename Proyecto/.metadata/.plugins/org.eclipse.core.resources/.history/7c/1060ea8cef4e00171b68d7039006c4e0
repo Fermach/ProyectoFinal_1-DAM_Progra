@@ -1,0 +1,81 @@
+package Vista;
+
+import Modelo.DAO.*;
+import javax.swing.JPanel;
+import javax.swing.JTable;
+import Modelo.DTO.Jugador;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.table.DefaultTableModel;
+
+public class TablaJugadores extends JPanel {
+    
+	List<Jugador> listaJugadores= new ArrayList<>();
+	private JTable table;
+	DAO dao = new DAO();
+	/**
+	 * Create the panel.
+	 */
+	public TablaJugadores() {
+		
+		JButton buttonVolverJug = new JButton("<");
+		
+		JScrollPane scrollPane = new JScrollPane();
+		GroupLayout groupLayout = new GroupLayout(this);
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addGap(26)
+					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
+						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+						.addComponent(buttonVolverJug))
+					.addContainerGap())
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addContainerGap(14, Short.MAX_VALUE)
+					.addComponent(buttonVolverJug)
+					.addGap(18)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 234, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		
+		
+		String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad"};
+		
+
+		DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+		
+	
+		scrollPane.setViewportView(table);
+		setLayout(groupLayout);
+      
+	
+		
+		String fila[] = new String[5];
+		
+		List<Jugador> listaJugadores=  new ArrayList<>();
+		
+		for (Jugador jugador : listaJugadores) {
+			
+			fila[0]= jugador.getLogin();
+			fila[1]= jugador.getNombre();
+			fila[2]= jugador.getApellidos();
+			fila[3]= jugador.getNivel();
+			fila[4]= jugador.getNacionalidad();
+			modelo.addRow(fila);
+		}
+		
+		table.setModel(modelo);
+	}
+
+}

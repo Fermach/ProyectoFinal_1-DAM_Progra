@@ -1,5 +1,0 @@
-package Modelo.DTO;
-
-public enum Nivel {
-  bajo, medio, alto
-}

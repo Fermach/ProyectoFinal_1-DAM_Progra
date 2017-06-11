@@ -1,6 +1,0 @@
-package Modelo.DTO;
-
-public enum Raza {
-
-	 argoniano,nordico,caballero_oscuro,elfo
-}

@@ -28,10 +28,10 @@ public class DAO implements IDAO {
 		Personaje p =new Personaje("kain", "kain566", "mago", "elfo", "M");
 		//System.out.println(dao.listaPersonajes());
 		//System.out.println(dao.listaGuerreros());
-	   //dao.añadirJugador(ju);
+	    //dao.añadirJugador(ju);
 	    //dao.añadirPersonaje(p);
 	    System.out.println(dao.listaJugadores());
-	     System.out.println(dao.listaPersonajes());
+	    System.out.println(dao.listaPersonajes());
         //System.out.println(dao.jugadoresAntiguos());
 	    //dao.borrarJugador(ju);
 	    //dao.borrarPersonaje(p);
@@ -203,6 +203,8 @@ public class DAO implements IDAO {
 	public boolean añadirJugador(Jugador j) {
 		boolean exito = false;
 		
+		if(j.getNivel() == "bajo"|| j.getNivel() == "medio" || j.getNivel() =="alto"){
+		
 		sql = "INSERT INTO jugadores VALUES (?, ?, ?, ?, ?)";
 		try {
 			pre = conex.prepareStatement(sql);
@@ -221,6 +223,7 @@ public class DAO implements IDAO {
 		} catch (SQLException e) {
 			System.out.println("Error en la insercción de datos de la BD");
 
+		}
 		}
 		return exito;
 	}
@@ -265,6 +268,12 @@ public class DAO implements IDAO {
 		boolean exito = false;
 		
 	    sql = "INSERT INTO personajes VALUES (?, ? , ?, ?, ?)";
+	    
+	    // CONTROLO EL TIPO , LA RAZA , Y EL SEXO
+	    if(p.getTipo() =="guerrero" || p.getTipo()== "mago" || p.getTipo()=="picaro"){
+	    if(p.getRaza()=="elfo" || p.getRaza()== "caballero_oscuro" || p.getRaza()=="nordico" || p.getRaza()== "argoniano"){
+	    if(p.getSexo()== "M" || p.getSexo()== "F"){  
+	    	 
 		try {
 			pre = conex.prepareStatement(sql);
 			pre.setString(1, p.getNombre());
@@ -282,6 +291,9 @@ public class DAO implements IDAO {
 			System.out.println("Error en la insercción de datos de la BD");
 
 		}
+	    }
+	    }
+	}
 		return exito;
 	}
 
@@ -338,8 +350,14 @@ public class DAO implements IDAO {
 	public boolean modificarPersonaje(Personaje p) {
 		// TODO Auto-generated method stub
 		boolean exito = false;
-	
 		sql = "UPDATE personajes SET nombre = ?, tipo = ?, raza = ?, sexo = ? WHERE login = ?";
+		 
+	    // CONTROLO EL TIPO , LA RAZA , Y EL SEXO
+	    if(p.getTipo() =="guerrero" || p.getTipo()== "mago" || p.getTipo()=="picaro"){
+	    if(p.getRaza()=="elfo" || p.getRaza()== "caballero_oscuro" || p.getRaza()=="nordico" || p.getRaza()== "argoniano"){
+	    if(p.getSexo()== "M" || p.getSexo()== "F"){
+	    	
+		
 		try {
 			pre = conex.prepareStatement(sql);
 			pre.setString(1, p.getNombre());
@@ -355,7 +373,9 @@ public class DAO implements IDAO {
 			System.out.println("Error en la actualización de datos de la BD");
 
 		}
-		
+	    }
+	    }
+	    }
 		return exito;
 		
 	

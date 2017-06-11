@@ -1,6 +1,0 @@
-package Modelo.DTO;
-
-public enum Tipo {
-
-	guerreo,picaro,mago
-}
