@@ -1,0 +1,173 @@
+package Controlador;
+
+import java.util.Collections;
+import java.util.List;
+
+import Modelo.DAO.*;
+import Vista.*;
+import Modelo.DTO.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+
+
+public class Controlador implements ActionListener {
+	private Vista vista;
+	private DAO dao;
+	private List<Jugador> listaJugador;
+	private List<Personaje> listaPersonajes;
+	private static int contador = 0;
+
+
+
+	public Controlador(Vista vista, DAO dao) {
+		this.vista = vista;
+		this.dao  = dao;
+		actionListener(this);
+		listaJugador = dao.listaJugadores();
+		listaPersonajes = dao.listaPersonajes();
+		mostrarJugador(0);
+		mostrarPersonaje(0);
+	}
+
+
+
+	//respuesta a los eventos de la vista
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getActionCommand().equals(">")){
+            //mostramor el jugador
+			contador++;
+			if (contador == listaJugador.size())
+				contador= 0;
+			mostrarJugador(contador);
+			//mostramos el personaje asociado a ese jugador
+			mostrarPersonaje(contador);
+		}
+		if (e.getActionCommand().equals("<")){
+            //mostramor el jugador
+			contador--;
+			if (contador == 0)
+				contador= listaJugador.size();
+			mostrarJugador(contador);
+			//mostramos el personaje asociado a ese jugador
+			mostrarPersonaje(contador);
+		}
+	   if (e.getActionCommand().equals("borrar")){
+		   dao.borrarJugador(recogerJugador());
+		   mostrarJugador(contador++);
+		   mostrarPersonaje(contador++);
+		   
+	   }
+       if (e.getActionCommand().equals("anadir")){
+		   habilitarTextField();
+		   
+		   
+	   }
+       if (e.getActionCommand().equals("+")){
+		   if(recogerPersonaje()== null || recogerJugador() == null){
+    	    
+			 System.out.println("error al añadir jugador");
+			 deshabilitarTextField();
+	       }else{
+		   
+		     dao.añadirJugador(recogerJugador());
+		     dao.añadirPersonaje(recogerPersonaje());  
+		     System.out.println("Jugador y Personajes añadidos");
+		     deshabilitarTextField();
+		     mostrarJugador(contador++);
+			 mostrarPersonaje(contador++);
+	   }
+       }
+       
+ 
+	}
+	
+	//registro los eventos de la vista
+	public void actionListener(ActionListener escuchador){
+		pantallaPrincipal.getBotonAtras().addActionListener(escuchador);
+		pantallaPrincipal.getBotonAdelante().addActionListener(escuchador);
+		pantallaPrincipal.getBorrarBoton().addActionListener(escuchador);
+		pantallaPrincipal.getAñadirBoton().addActionListener(escuchador);
+		
+		
+		
+	}
+	
+	private void mostrarJugador(int indice){
+		pantallaPrincipal.getTextFieldLogin().setText(
+				listaJugador.get(indice).getLogin());
+	    pantallaPrincipal.getTextFieldNombre().setText(
+				listaJugador.get(indice).getNombre());
+		pantallaPrincipal.getTextFieldApellidos().setText(
+				listaJugador.get(indice).getApellidos());
+		pantallaPrincipal.getTextFieldNivel().setText(
+				listaJugador.get(indice).getNivel());
+		pantallaPrincipal.getTextFieldNacionalidad().setText(
+				listaJugador.get(indice).getNacionalidad());
+	}
+	private void mostrarPersonaje(int indice){
+		pantallaPrincipal.getTextFieldNombre2().setText(
+				listaPersonajes.get(indice).getNombre());
+	    pantallaPrincipal.getTextFieldLogin2().setText(
+				listaPersonajes.get(indice).getLogin());
+		pantallaPrincipal.getTextFieldTipo().setText(
+				listaPersonajes.get(indice).getTipo());
+		pantallaPrincipal.getTextFieldRaza().setText(
+				listaPersonajes.get(indice).getRaza());
+		pantallaPrincipal.getTextFieldSexo().setText(
+				listaPersonajes.get(indice).getSexo());
+	}
+
+	private void habilitarTextField(){
+		pantallaPrincipal.getTextFieldNombre().setEditable(true);
+		pantallaPrincipal.getTextFieldApellidos().setEditable(true);
+		pantallaPrincipal.getTextFieldLogin().setEditable(true);
+		pantallaPrincipal.getTextFieldNacionalidad().setEditable(true);
+		pantallaPrincipal.getTextFieldNivel().setEditable(true);
+		pantallaPrincipal.getTextFieldNombre2().setEditable(true);
+		pantallaPrincipal.getTextFieldTipo().setEditable(true);
+		pantallaPrincipal.getTextFieldRaza().setEditable(true);
+		pantallaPrincipal.getTextFieldSexo().setEditable(true);
+	}
+	private void deshabilitarTextField(){
+		pantallaPrincipal.getTextFieldNombre().setEditable(false);
+		pantallaPrincipal.getTextFieldApellidos().setEditable(false);
+		pantallaPrincipal.getTextFieldLogin().setEditable(false);
+		pantallaPrincipal.getTextFieldNacionalidad().setEditable(false);
+		pantallaPrincipal.getTextFieldNivel().setEditable(false);
+		pantallaPrincipal.getTextFieldNombre2().setEditable(false);
+		pantallaPrincipal.getTextFieldTipo().setEditable(false);
+		pantallaPrincipal.getTextFieldRaza().setEditable(false);
+		pantallaPrincipal.getTextFieldSexo().setEditable(false);
+	}
+	
+	//recogemos los datos del jugador
+	private Jugador recogerJugador(){
+		Jugador jugador=null;
+		
+		String login = pantallaPrincipal.getTextFieldLogin().getText();
+		String nombre = pantallaPrincipal.getTextFieldNombre().getText();
+		String apellidos = pantallaPrincipal.getTextFieldApellidos().getText();
+		String nivel = pantallaPrincipal.getTextFieldNivel().getText();
+		String nacionalidad = pantallaPrincipal.getTextFieldNacionalidad().getText();
+		jugador = new Jugador(login, nombre, apellidos, nivel, nacionalidad);
+		return jugador;
+	}
+	
+	//recojemos los datos del personaje
+	private Personaje recogerPersonaje(){
+		Personaje personaje =null;
+		
+		String nombre = pantallaPrincipal.getTextFieldNombre2().getText();
+		String login = pantallaPrincipal.getTextFieldLogin().getText();
+		String tipo = pantallaPrincipal.getTextFieldTipo().getText();
+		String raza = pantallaPrincipal.getTextFieldRaza().getText();
+		String sexo = pantallaPrincipal.getTextFieldSexo().getText();
+		
+		//a la hora de introducir un personaje, recoge los datos introducidos.
+		//PERO RECOGE el LOGIN DEL JUGADOR, YA QUE DEBEN SER IGUALES
+		personaje = new Personaje(nombre, login, tipo, raza, sexo);
+		return personaje;
+	}
+}

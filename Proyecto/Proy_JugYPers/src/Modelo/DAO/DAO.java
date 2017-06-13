@@ -15,6 +15,14 @@ import Modelo.DTO.Personaje;
 
 public class DAO implements IDAO {
 
+	/**
+	 * IMPORTANTE!!
+	 * 
+	 * Muchos de estos metodos presentes en el DAO no estan 
+	 * siendo utilizados en esta versión de proyecto
+	 * 
+	 */
+	
 	private Connection conex= Conexion.getInstance();
 	private Statement state;
 	private PreparedStatement pre;
@@ -24,18 +32,17 @@ public class DAO implements IDAO {
 	public static void main(String[] args) {
 		DAO dao = new DAO();
 		
-		Jugador ju =new Jugador("kain566", "Pepe", "Ramirez", "alto", "ES");
-		Personaje p =new Personaje("kain", "kain566", "mago", "elfo", "M");
+		Jugador ju =new Jugador("ka6", "Perepe", "Ramirez", "alto", "ES");
+		Personaje p =new Personaje("kaimmn", "ka6", "mago", "elfo", "M");
 		//System.out.println(dao.listaPersonajes());
 		//System.out.println(dao.listaGuerreros());
 	    //dao.añadirJugador(ju);
 	    //dao.añadirPersonaje(p);
-	    System.out.println(dao.listaJugadores());
-	    System.out.println(dao.listaPersonajes());
         //System.out.println(dao.jugadoresAntiguos());
 	    //dao.borrarJugador(ju);
-	    //dao.borrarPersonaje(p);
-	    
+	   // dao.borrarPersonaje(p);
+	    System.out.println(dao.listaJugadores());
+	    System.out.println(dao.listaPersonajes());
 	}
 	
 	
@@ -44,7 +51,7 @@ public class DAO implements IDAO {
 	public List<Personaje> listaPersonajes() {
 		// TODO Auto-generated method stub
 		List<Personaje> listaPersonajes = new ArrayList<>();
-		sql= "SELECT * FROM personajes ORDER BY nombre";
+		sql= "SELECT * FROM personajes ORDER BY login";
 		try {
 		    state =conex.createStatement();
 		    ResultSet resulset = state.executeQuery(sql);

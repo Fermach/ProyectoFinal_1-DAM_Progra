@@ -22,31 +22,45 @@ public class TablaJugadores extends JPanel {
 	
 	DAO dao = new DAO();
 	private JTable table_1;
+	JButton buttonAtrasJugadores = new JButton("<");
+	
+	public JButton getButtonAtrasJugadores() {
+		return buttonAtrasJugadores;
+	}
+
+	public void setButtonAtrasJugadores(JButton buttonAtrasJugadores) {
+		this.buttonAtrasJugadores = buttonAtrasJugadores;
+	}
+
 	/**
 	 * Create the panel.
 	 */
 	public TablaJugadores() {
 		
-		JButton buttonVolverJug = new JButton("<");
+		
 		
 		JScrollPane scrollPane = new JScrollPane();
+		
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(26)
+					.addGap(29)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(buttonVolverJug)
-						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(buttonAtrasJugadores, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(370))
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 411, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(14, Short.MAX_VALUE)
-					.addComponent(buttonVolverJug)
-					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 234, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(20, Short.MAX_VALUE)
+					.addComponent(buttonAtrasJugadores)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 240, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		

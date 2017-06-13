@@ -16,30 +16,48 @@ public class TablaMagos extends JPanel {
 	private JTable table;
     DAO dao= new DAO();
     
+    JButton buttonAtrasMagos = new JButton("<");
+    
+
+	public JButton getButtonAtrasMagos() {
+		return buttonAtrasMagos;
+	}
+
+
+
+	public void setButtonAtrasMagos(JButton buttonAtrasMagos) {
+		this.buttonAtrasMagos = buttonAtrasMagos;
+	}
+
+
 	/**
 	 * Create the panel.
 	 */
 	public TablaMagos() {
-	    JButton buttonVolverPersonajes = new JButton("<");
+	   
 		
 			JScrollPane scrollPane = new JScrollPane();
+			
+			
 			GroupLayout groupLayout = new GroupLayout(this);
 			groupLayout.setHorizontalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.TRAILING)
 					.addGroup(groupLayout.createSequentialGroup()
-						.addGap(32)
+						.addGap(29)
 						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-							.addComponent(buttonVolverPersonajes)
-							.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+							.addGroup(groupLayout.createSequentialGroup()
+								.addComponent(buttonAtrasMagos, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+								.addGap(370))
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 411, GroupLayout.PREFERRED_SIZE))
 						.addContainerGap())
 			);
 			groupLayout.setVerticalGroup(
-				groupLayout.createParallelGroup(Alignment.LEADING)
+				groupLayout.createParallelGroup(Alignment.TRAILING)
 					.addGroup(groupLayout.createSequentialGroup()
-						.addGap(15)
-						.addComponent(buttonVolverPersonajes)
+						.addContainerGap(24, Short.MAX_VALUE)
+						.addComponent(buttonAtrasMagos)
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 236, GroupLayout.PREFERRED_SIZE)
 						.addContainerGap())
 			);
 			

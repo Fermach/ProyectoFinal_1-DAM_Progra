@@ -13,12 +13,13 @@
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="Vista.PantallaPrincipal"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
-<fullyQualifiedTypeName name="Modelo.DAO.DAO"/>
 <fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
 <fullyQualifiedTypeName name="Modelo.DTO.Personaje"/>
 <fullyQualifiedTypeName name="Vista.TablaJugadores"/>
 <fullyQualifiedTypeName name="Modelo.DTO.JugadorAntiguo"/>
 <fullyQualifiedTypeName name="Vista.TablaHistorial"/>
+<fullyQualifiedTypeName name="Modelo.DAO.DAO"/>
+<fullyQualifiedTypeName name="Vista.PantallaPrincipal"/>
+<fullyQualifiedTypeName name="Vista.TablaJugadoresAltoNivel"/>
 </qualifiedTypeNameHistroy>

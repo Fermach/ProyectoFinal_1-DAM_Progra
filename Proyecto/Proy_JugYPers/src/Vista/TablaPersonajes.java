@@ -17,32 +17,52 @@ public class TablaPersonajes extends JPanel {
 	private JTable table;
     DAO dao= new DAO();
     
+    JButton buttonAtrasPersonajes = new JButton("<");
     
+
+
+	public JButton getButtonAtrasPersonajes() {
+		return buttonAtrasPersonajes;
+	}
+
+
+
+	public void setButtonAtrasPersonajes(JButton buttonAtrasPersonajes) {
+		this.buttonAtrasPersonajes = buttonAtrasPersonajes;
+	}
+
+
+
 	/**
 	 * Create the panel.
 	 */
 	public TablaPersonajes() {
 		
-		JButton buttonVolverPersnajes = new JButton("<");
+		
 		
 		JScrollPane scrollPane = new JScrollPane();
+		
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(32)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addGap(30)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(buttonVolverPersnajes)
-						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
-					.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 410, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(buttonAtrasPersonajes, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(369))))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(15)
-					.addComponent(buttonVolverPersnajes)
+					.addContainerGap(28, Short.MAX_VALUE)
+					.addComponent(buttonAtrasPersonajes)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 245, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		

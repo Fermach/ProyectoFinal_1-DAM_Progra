@@ -24,9 +24,180 @@ public class PantallaPrincipal extends JPanel {
 	private JTextField textFieldLogin2;
 
 	JButton BotonAtras = new JButton("<");
-	JButton AñadirBoton = new JButton("A\u00F1adir");
+	JButton AñadirBoton = new JButton("Nuevo");
 	JButton BorrarBoton = new JButton("Borrar");
 	JButton BotonAdelante = new JButton(">");
+	JButton buttonmas = new JButton("+");
+	
+	
+	public JTextField getTextFieldLogin() {
+		return textFieldLogin;
+	}
+
+
+
+	public void setTextFieldLogin(JTextField textFieldLogin) {
+		this.textFieldLogin = textFieldLogin;
+	}
+
+
+
+	public JTextField getTextFieldNombre() {
+		return textFieldNombre;
+	}
+
+
+
+	public void setTextFieldNombre(JTextField textFieldNombre) {
+		this.textFieldNombre = textFieldNombre;
+	}
+
+
+
+	public JTextField getTextFieldApellidos() {
+		return textFieldApellidos;
+	}
+
+
+
+	public void setTextFieldApellidos(JTextField textFieldApellidos) {
+		this.textFieldApellidos = textFieldApellidos;
+	}
+
+
+
+	public JTextField getTextFieldNacionalidad() {
+		return textFieldNacionalidad;
+	}
+
+
+
+	public void setTextFieldNacionalidad(JTextField textFieldNacionalidad) {
+		this.textFieldNacionalidad = textFieldNacionalidad;
+	}
+
+
+
+	public JTextField getTextFieldNivel() {
+		return textFieldNivel;
+	}
+
+
+
+	public void setTextFieldNivel(JTextField textFieldNivel) {
+		this.textFieldNivel = textFieldNivel;
+	}
+
+
+
+	public JTextField getTextFieldNombre2() {
+		return textFieldNombre2;
+	}
+
+
+
+	public void setTextFieldNombre2(JTextField textFieldNombre2) {
+		this.textFieldNombre2 = textFieldNombre2;
+	}
+
+
+
+	public JTextField getTextFieldTipo() {
+		return textFieldTipo;
+	}
+
+
+
+	public void setTextFieldTipo(JTextField textFieldTipo) {
+		this.textFieldTipo = textFieldTipo;
+	}
+
+
+
+	public JTextField getTextFieldRaza() {
+		return textFieldRaza;
+	}
+
+
+
+	public void setTextFieldRaza(JTextField textFieldRaza) {
+		this.textFieldRaza = textFieldRaza;
+	}
+
+
+
+	public JTextField getTextFieldSexo() {
+		return textFieldSexo;
+	}
+
+
+
+	public void setTextFieldSexo(JTextField textFieldSexo) {
+		this.textFieldSexo = textFieldSexo;
+	}
+
+
+
+	public JTextField getTextFieldLogin2() {
+		return textFieldLogin2;
+	}
+
+
+
+	public void setTextFieldLogin2(JTextField textFieldLogin2) {
+		this.textFieldLogin2 = textFieldLogin2;
+	}
+
+
+
+	public JButton getBotonAtras() {
+		return BotonAtras;
+	}
+
+
+
+	public void setBotonAtras(JButton botonAtras) {
+		BotonAtras = botonAtras;
+	}
+
+
+
+	public JButton getAñadirBoton() {
+		return AñadirBoton;
+	}
+
+
+
+	public void setAñadirBoton(JButton añadirBoton) {
+		AñadirBoton = añadirBoton;
+	}
+
+
+
+	public JButton getBorrarBoton() {
+		return BorrarBoton;
+	}
+
+
+
+	public void setBorrarBoton(JButton borrarBoton) {
+		BorrarBoton = borrarBoton;
+	}
+
+
+
+	public JButton getBotonAdelante() {
+		return BotonAdelante;
+	}
+
+
+
+	public void setBotonAdelante(JButton botonAdelante) {
+		BotonAdelante = botonAdelante;
+	}
+
+
+
 	/**
 	 * Create the panel.
 	 */
@@ -42,18 +213,18 @@ public class PantallaPrincipal extends JPanel {
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel, GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-					.addGap(5))
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE)
+					.addGap(18)
+					.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addGap(22))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
+						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 					.addGap(9))
 		);
 		
@@ -183,24 +354,24 @@ public class PantallaPrincipal extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		
+		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-						.addComponent(AñadirBoton)
-						.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel.createSequentialGroup()
 							.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
 								.addGroup(gl_panel.createSequentialGroup()
-									.addGap(24)
 									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
 										.addComponent(lblNombre)
 										.addComponent(lblNewLabel))
 									.addGap(35)
 									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-										.addComponent(textFieldLogin)
-										.addComponent(textFieldNombre)))
+										.addComponent(textFieldLogin, 63, 63, 63)
+										.addComponent(textFieldNombre, 63, 63, 63)))
 								.addGroup(gl_panel.createSequentialGroup()
 									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
 										.addComponent(lblNivel)
@@ -208,17 +379,22 @@ public class PantallaPrincipal extends JPanel {
 										.addComponent(lblApellidos))
 									.addGap(36)
 									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-										.addComponent(textFieldApellidos)
-										.addComponent(textFieldNacionalidad)
-										.addComponent(textFieldNivel))
+										.addComponent(textFieldApellidos, 63, 63, 63)
+										.addComponent(textFieldNacionalidad, 63, 63, 63)
+										.addComponent(textFieldNivel, 63, 63, 63))
 									.addPreferredGap(ComponentPlacement.RELATED)))
 							.addGap(5))
 						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(BotonAtras, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addComponent(BotonAtras, GroupLayout.PREFERRED_SIZE, 52, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(BotonAdelante, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGap(28)
-							.addComponent(BorrarBoton, 0, 71, Short.MAX_VALUE)))
+							.addComponent(BotonAdelante, GroupLayout.PREFERRED_SIZE, 52, Short.MAX_VALUE)
+							.addGap(9)
+							.addComponent(BorrarBoton))
+						.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+							.addGap(37)
+							.addComponent(AñadirBoton, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(buttonmas, GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)))
 					.addContainerGap())
 		);
 		gl_panel.setVerticalGroup(
@@ -245,19 +421,30 @@ public class PantallaPrincipal extends JPanel {
 						.addComponent(textFieldNivel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addComponent(lblNivel))
 					.addGap(20)
-					.addComponent(AñadirBoton)
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(buttonmas)
+						.addComponent(AñadirBoton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-							.addComponent(BotonAtras)
-							.addComponent(BotonAdelante))
-						.addGroup(gl_panel.createSequentialGroup()
-							.addComponent(BorrarBoton, GroupLayout.PREFERRED_SIZE, 26, Short.MAX_VALUE)
-							.addGap(8)))
-					.addGap(0))
+					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
+						.addComponent(BotonAtras)
+						.addComponent(BotonAdelante)
+						.addComponent(BorrarBoton, GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
+					.addGap(8))
 		);
 		panel.setLayout(gl_panel);
 		setLayout(groupLayout);
 
+	}
+
+
+
+	public JButton getButtonmas() {
+		return buttonmas;
+	}
+
+
+
+	public void setButtonmas(JButton buttonmas) {
+		this.buttonmas = buttonmas;
 	}
 }

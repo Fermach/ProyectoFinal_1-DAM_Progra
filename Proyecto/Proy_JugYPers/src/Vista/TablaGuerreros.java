@@ -15,34 +15,46 @@ import Modelo.DTO.Personaje;
 public class TablaGuerreros extends JPanel {
 	private JTable table;
     DAO dao= new DAO();
-    
+    JButton btnNewButtonAtrasGuerreros = new JButton("<");
 	
-	
+	public JButton getBtnNewButtonAtrasGuerreros() {
+		return btnNewButtonAtrasGuerreros;
+	}
+
+	public void setBtnNewButtonAtrasGuerreros(JButton btnNewButtonAtrasGuerreros) {
+		this.btnNewButtonAtrasGuerreros = btnNewButtonAtrasGuerreros;
+	}
+
 	/**
 	 * Create the panel.
 	 */
 	public TablaGuerreros() {
 
-     JButton buttonVolverGuerreros = new JButton("<");
+     
 		
 		JScrollPane scrollPane = new JScrollPane();
+		
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(32)
+					.addGap(40)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(buttonVolverGuerreros)
-						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
-					.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(btnNewButtonAtrasGuerreros, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 400, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())))
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(15)
-					.addComponent(buttonVolverGuerreros)
+					.addGap(25)
+					.addComponent(btnNewButtonAtrasGuerreros, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 235, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		
@@ -69,5 +81,4 @@ public class TablaGuerreros extends JPanel {
         //aplico el modelo
         table.setModel(modelo);
 	}
-
 }

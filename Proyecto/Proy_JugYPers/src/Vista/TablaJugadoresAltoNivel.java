@@ -17,32 +17,46 @@ public class TablaJugadoresAltoNivel extends JPanel {
 
 	private JTable table;
     DAO dao= new DAO();
-    private JButton buttonVolverJugNivel;
+    
+	JButton buttonAtrasJugAtoNiv = new JButton("<");
+
+
+	public JButton getButtonAtrasJugAtoNiv() {
+		return buttonAtrasJugAtoNiv;
+	}
+
+
+	public void setButtonAtrasJugAtoNiv(JButton buttonAtrasJugAtoNiv) {
+		this.buttonAtrasJugAtoNiv = buttonAtrasJugAtoNiv;
+	}
+
+
 	/**
 	 * Create the panel.
 	 */
 	public TablaJugadoresAltoNivel() {
-       
-		buttonVolverJugNivel = new JButton("<");
 		
 		JScrollPane scrollPane = new JScrollPane();
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(32)
+					.addGap(30)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(buttonVolverJugNivel)
-						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(buttonAtrasJugAtoNiv, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGap(369))
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 410, GroupLayout.PREFERRED_SIZE))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(15)
-					.addComponent(buttonVolverJugNivel)
+					.addContainerGap(23, Short.MAX_VALUE)
+					.addComponent(buttonAtrasJugAtoNiv)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 237, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		

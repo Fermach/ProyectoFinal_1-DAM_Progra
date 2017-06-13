@@ -1,0 +1,50 @@
+package Controlador;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
+import Vista.Vista;
+
+public class ControladorMenuVista implements ActionListener {
+	private Vista vista;
+	
+	
+	public ControladorMenuVista(Vista vista ) {
+		this.vista = vista;
+		actionListener(this);
+		
+	}
+
+
+
+	//respuesta a los eventos de la vista
+	@Override
+	public void actionPerformed(ActionEvent e) {
+	  if(e.getActionCommand().equals("Pantalla principal")){
+		  
+		  
+	  }
+	  
+	  
+	  
+	  
+	  
+	  
+	}
+	
+	//registro los eventos de la vista
+	public void actionListener(ActionListener escuchador){
+		vista.getMntmPantallaPrincipal().addActionListener(escuchador);
+		vista.getMntmNewMenuMostrarJugadores().addActionListener(escuchador);
+		vista.getMntmJugadoresAntiguos().addActionListener(escuchador);
+		vista.getMntmNewMenuPersonajes().addActionListener(escuchador);
+		vista.getMntmListaDeGuerreros().addActionListener(escuchador);
+		vista.getMntmListaDeMagos().addActionListener(escuchador);
+		vista.getMntmListaDePicaros().addActionListener(escuchador);
+		vista.getMntmJugadoresAntiguos().addActionListener(escuchador);
+		
+	}
+	
+
+}

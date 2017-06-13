@@ -11,34 +11,56 @@ import javax.swing.table.DefaultTableModel;
 import Modelo.DAO.DAO;
 import Modelo.DTO.Jugador;
 import Modelo.DTO.JugadorAntiguo;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class TablaHistorial extends JPanel {
 	DAO dao = new DAO();
 	private JTable table_1;
+	
+	JButton buttonAtrasHistorial = new JButton("<");
+	
+
+
+	public JButton getButtonAtrasHistorial() {
+		return buttonAtrasHistorial;
+	}
+
+
+
+	public void setButtonAtrasHistorial(JButton buttonAtrasHistorial) {
+		this.buttonAtrasHistorial = buttonAtrasHistorial;
+	}
+
+
+
 	/**
 	 * Create the panel.
 	 */
 	public TablaHistorial() {
-JButton buttonVolverHistorial = new JButton("<");
-		
+
 		JScrollPane scrollPane = new JScrollPane();
+		
+		
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
-			groupLayout.createParallelGroup(Alignment.LEADING)
+			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(26)
+					.addGap(32)
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addComponent(buttonVolverHistorial)
-						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE))
-					.addContainerGap())
+						.addGroup(groupLayout.createSequentialGroup()
+							.addComponent(buttonAtrasHistorial, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+							.addGap(345))
+						.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 408, GroupLayout.PREFERRED_SIZE)
+							.addContainerGap())))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(14, Short.MAX_VALUE)
-					.addComponent(buttonVolverHistorial)
-					.addGap(18)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 234, GroupLayout.PREFERRED_SIZE)
+					.addGap(26)
+					.addComponent(buttonAtrasHistorial, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 229, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
 		
