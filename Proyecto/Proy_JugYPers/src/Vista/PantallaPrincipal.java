@@ -112,8 +112,17 @@ public class PantallaPrincipal extends JPanel {
 		this.textFieldTipo = textFieldTipo;
 	}
 
+	
+	public JButton getButtonmas() {
+		return buttonmas;
+	}
 
 
+	public void setButtonmas(JButton buttonmas) {
+		this.buttonmas = buttonmas;
+	}
+
+	
 	public JTextField getTextFieldRaza() {
 		return textFieldRaza;
 	}
@@ -214,17 +223,17 @@ public class PantallaPrincipal extends JPanel {
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE)
-					.addGap(18)
-					.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addGap(22))
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+					.addGap(30))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
 					.addGap(9))
 		);
 		
@@ -263,27 +272,32 @@ public class PantallaPrincipal extends JPanel {
 				.addGroup(gl_panel_1.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-							.addGap(18)
-							.addComponent(textFieldNombre2))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_2)
-							.addGap(44)
-							.addComponent(textFieldTipo))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-							.addGap(18)
-							.addComponent(textFieldRaza))
-						.addGroup(gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_4)
-							.addGap(40)
-							.addComponent(textFieldSexo))
-						.addGroup(gl_panel_1.createSequentialGroup()
+						.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
 							.addComponent(lblNewLabel_5)
 							.addGap(18)
-							.addComponent(textFieldLogin2)
-							.addGap(21)))
+							.addComponent(textFieldLogin2, 62, 62, 62)
+							.addGap(21))
+						.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+									.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
+										.addComponent(lblNewLabel_4)
+										.addGap(40))
+									.addGroup(gl_panel_1.createSequentialGroup()
+										.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+										.addGap(30)))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(lblNewLabel_2)
+									.addPreferredGap(ComponentPlacement.RELATED))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)))
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
+									.addComponent(textFieldRaza, 74, 74, Short.MAX_VALUE)
+									.addComponent(textFieldSexo, 0, 0, Short.MAX_VALUE)
+									.addComponent(textFieldNombre2, 0, 0, Short.MAX_VALUE))
+								.addComponent(textFieldTipo, 0, 0, Short.MAX_VALUE))))
 					.addGap(38))
 		);
 		gl_panel_1.setVerticalGroup(
@@ -291,24 +305,24 @@ public class PantallaPrincipal extends JPanel {
 				.addGroup(gl_panel_1.createSequentialGroup()
 					.addGap(25)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_1)
-						.addComponent(textFieldNombre2))
+						.addComponent(textFieldNombre2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_1))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_2)
-						.addComponent(textFieldTipo))
+						.addComponent(textFieldTipo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_2))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_3)
-						.addComponent(textFieldRaza))
+						.addComponent(textFieldRaza, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addPreferredGap(ComponentPlacement.UNRELATED)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_4)
-						.addComponent(textFieldSexo))
+						.addComponent(textFieldSexo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(30)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_5)
-						.addComponent(textFieldLogin2))
+						.addComponent(textFieldLogin2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(69))
 		);
 		panel_1.setLayout(gl_panel_1);
@@ -438,13 +452,5 @@ public class PantallaPrincipal extends JPanel {
 
 
 
-	public JButton getButtonmas() {
-		return buttonmas;
-	}
-
-
-
-	public void setButtonmas(JButton buttonmas) {
-		this.buttonmas = buttonmas;
-	}
+	
 }

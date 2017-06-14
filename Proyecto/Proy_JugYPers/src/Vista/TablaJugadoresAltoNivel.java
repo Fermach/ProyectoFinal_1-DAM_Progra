@@ -18,7 +18,7 @@ public class TablaJugadoresAltoNivel extends JPanel {
 	private JTable table;
     DAO dao= new DAO();
     
-	JButton buttonAtrasJugAtoNiv = new JButton("<");
+	JButton buttonAtrasJugAtoNiv = new JButton("<<");
 
 
 	public JButton getButtonAtrasJugAtoNiv() {
@@ -42,21 +42,19 @@ public class TablaJugadoresAltoNivel extends JPanel {
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
 				.addGroup(groupLayout.createSequentialGroup()
-					.addGap(30)
+					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-						.addGroup(groupLayout.createSequentialGroup()
-							.addComponent(buttonAtrasJugAtoNiv, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGap(369))
-						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 410, GroupLayout.PREFERRED_SIZE))
+						.addComponent(buttonAtrasJugAtoNiv, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
+						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
-					.addContainerGap(23, Short.MAX_VALUE)
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+					.addGap(6)
 					.addComponent(buttonAtrasJugAtoNiv)
-					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 237, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.UNRELATED)
+					.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
 					.addContainerGap())
 		);
 		
@@ -70,7 +68,7 @@ public class TablaJugadoresAltoNivel extends JPanel {
         DefaultTableModel modelo = new DefaultTableModel(null, titulos);
         
       //Recorro la lista de la base de datos y añado cada personaje al modelo
-        for (Jugador j : dao.listaJugadores()) {
+        for (Jugador j : dao.jugadoresNivelAlto()) {
         	
         	fila[0] = j.getLogin();
         	fila[1] = j.getNombre();

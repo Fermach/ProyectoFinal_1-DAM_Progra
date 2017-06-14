@@ -4,17 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.sqlite.SQLiteConfig;
+
 public class Conexion {
 
 private static Connection conexion = null;
 	
 	private Conexion(){
+		SQLiteConfig config = new SQLiteConfig();
+		config.enforceForeignKeys(true);
 		
 		try {
 			Class.forName("org.sqlite.JDBC");
 			try {
 				conexion = DriverManager.
-						getConnection("jdbc:sqlite:BD/bd_jugadoresYpers");
+						getConnection("jdbc:sqlite:BD/bd_juYpers", config.toProperties());
 			} catch (SQLException e) {
 				System.out.println("Error al acceso de la BD");
 			}

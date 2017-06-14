@@ -15,7 +15,7 @@ import Modelo.DTO.Personaje;
 public class TablaPicaros extends JPanel {
 	private JTable table;
     DAO dao= new DAO();
-    JButton buttonAtrasPicaros = new JButton("<");
+    JButton buttonAtrasPicaros = new JButton("<<");
     
     
     
@@ -42,21 +42,19 @@ public class TablaPicaros extends JPanel {
 			groupLayout.setHorizontalGroup(
 				groupLayout.createParallelGroup(Alignment.LEADING)
 					.addGroup(groupLayout.createSequentialGroup()
-						.addGap(32)
+						.addContainerGap()
 						.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
-							.addGroup(groupLayout.createSequentialGroup()
-								.addComponent(buttonAtrasPicaros, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addGap(367))
-							.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
+							.addComponent(buttonAtrasPicaros, GroupLayout.PREFERRED_SIZE, 58, GroupLayout.PREFERRED_SIZE)
+							.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
 						.addContainerGap())
 			);
 			groupLayout.setVerticalGroup(
 				groupLayout.createParallelGroup(Alignment.LEADING)
 					.addGroup(groupLayout.createSequentialGroup()
-						.addGap(15)
+						.addGap(10)
 						.addComponent(buttonAtrasPicaros)
 						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
+						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
 						.addContainerGap())
 			);
 			

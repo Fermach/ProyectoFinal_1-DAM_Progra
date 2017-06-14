@@ -22,4 +22,5 @@
 <fullyQualifiedTypeName name="Modelo.DAO.DAO"/>
 <fullyQualifiedTypeName name="Vista.PantallaPrincipal"/>
 <fullyQualifiedTypeName name="Vista.TablaJugadoresAltoNivel"/>
+<fullyQualifiedTypeName name="org.sqlite.SQLiteConfig"/>
 </qualifiedTypeNameHistroy>

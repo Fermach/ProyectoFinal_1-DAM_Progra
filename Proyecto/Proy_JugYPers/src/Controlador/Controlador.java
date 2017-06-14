@@ -6,17 +6,19 @@ import java.util.List;
 import Modelo.DAO.*;
 import Vista.*;
 import Modelo.DTO.*;
+
+import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 
 
-public class Controlador implements ActionListener {
-	private Vista vista;
-	private DAO dao;
-	private List<Jugador> listaJugador;
-	private List<Personaje> listaPersonajes;
-	private static int contador = 0;
+  public class Controlador implements ActionListener {
+	 private Vista vista;
+	 private DAO dao;
+	 private List<Jugador> listaJugador;
+	 private List<Personaje> listaPersonajes;
+	 private static int contador = 0;
 
 
 
@@ -54,8 +56,9 @@ public class Controlador implements ActionListener {
 			mostrarPersonaje(contador);
 		}
 	   if (e.getActionCommand().equals("borrar")){
-		   dao.borrarJugador(recogerJugador());
-		   dao.borrarPersonaje(recogerPersonaje());
+		   System.out.println("entra el if de borrar");
+           dao.borrarJugador(recogerJugador());
+		   
 		   mostrarJugador(contador++);
 		   mostrarPersonaje(contador++);
 		   
@@ -65,8 +68,9 @@ public class Controlador implements ActionListener {
 		   vista.getPantallaPrincipal().getTextFieldLogin2().setText("");
 		   
 	   }
+       
        if (e.getActionCommand().equals("+")){
-		 //  System.out.println("entra el if");
+		  System.out.println("entra el if de +");
 		     dao.añadirJugador(recogerJugador());
 		     dao.añadirPersonaje(recogerPersonaje());  
 		     System.out.println("Jugador y Personajes añadidos");
@@ -74,10 +78,55 @@ public class Controlador implements ActionListener {
 		     mostrarJugador(contador++);
 			 mostrarPersonaje(contador++);
 	   }
+       
+       if(e.getActionCommand().equals("<<")){
+    	   vista.getContentPane().removeAll();
+    	   vista.getContentPane().add(vista.getPantallaPrincipal(), BorderLayout.CENTER);
+    	   vista.repaint();
+    	   vista.revalidate();
+       }
+       
        if(e.getActionCommand().equals("Mostrar Jugadores")){
-    	   
-    	 
-    	   
+    	   vista.getContentPane().removeAll();
+    	   vista.getContentPane().add(vista.getTjugadores(), BorderLayout.CENTER);
+    	   vista.repaint();
+    	   vista.revalidate();
+       }
+       if(e.getActionCommand().equals("Mostrar Jugadores con nivel")){
+    	   vista.getContentPane().removeAll();
+    	   vista.getContentPane().add(vista.getTjugnivAlto(), BorderLayout.CENTER);
+    	   vista.repaint();
+    	   vista.revalidate();
+       }
+       if(e.getActionCommand().equals("Mostrar Personajes")){
+    	   vista.getContentPane().removeAll();
+    	   vista.getContentPane().add(vista.getTpersonajes(), BorderLayout.CENTER);
+    	   vista.repaint();
+    	   vista.revalidate();
+       }
+       if(e.getActionCommand().equals("Lista de Guerreros")){
+    	   vista.getContentPane().removeAll();
+    	   vista.getContentPane().add(vista.getTguerreros(), BorderLayout.CENTER);
+    	   vista.repaint();
+    	   vista.revalidate();
+       }
+       if(e.getActionCommand().equals("Lista de Magos")){
+    	   vista.getContentPane().removeAll();
+    	   vista.getContentPane().add(vista.getTmagos(), BorderLayout.CENTER);
+    	   vista.repaint();
+    	   vista.revalidate();
+       }
+       if(e.getActionCommand().equals("Lista de Picaros")){
+    	   vista.getContentPane().removeAll();
+    	   vista.getContentPane().add(vista.getTpicaros(), BorderLayout.CENTER);
+    	   vista.repaint();
+    	   vista.revalidate();
+       }
+       if(e.getActionCommand().equals("Jugadores Antiguos")){
+    	   vista.getContentPane().removeAll();
+    	   vista.getContentPane().add(vista.getThistorial(), BorderLayout.CENTER);
+    	   vista.repaint();
+    	   vista.revalidate();
        }
        
        
@@ -99,6 +148,7 @@ public class Controlador implements ActionListener {
 		vista.getMntmListaDeMagos().addActionListener(escuchador);
 		vista.getMntmListaDePicaros().addActionListener(escuchador);
 		vista.getMntmJugadoresAntiguos().addActionListener(escuchador);
+		vista.getMntmNewMenuJAltoNivel().addActionListener(escuchador);
 		vista.getTpersonajes().getButtonAtrasPersonajes().addActionListener(escuchador);
 		vista.getTjugadores().getButtonAtrasJugadores().addActionListener(escuchador);
 		vista.getThistorial().getButtonAtrasHistorial().addActionListener(escuchador);
