@@ -17,7 +17,31 @@ public class TablaJugadoresAltoNivel extends JPanel {
 
 	private JTable table;
     DAO dao= new DAO();
+    String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad"};
+	String fila[] = new String[5] ;
+	
+    DefaultTableModel modelo = new DefaultTableModel(null, titulos);
     
+	public JTable getTable() {
+		return table;
+	}
+
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+
+
 	JButton buttonAtrasJugAtoNiv = new JButton("<<");
 
 
@@ -62,24 +86,9 @@ public class TablaJugadoresAltoNivel extends JPanel {
 		scrollPane.setViewportView(table);
 		setLayout(groupLayout);
         
-		String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad"};
-		String fila[] = new String[5] ;
 		
-        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
         
-      //Recorro la lista de la base de datos y añado cada personaje al modelo
-        for (Jugador j : dao.jugadoresNivelAlto()) {
-        	
-        	fila[0] = j.getLogin();
-        	fila[1] = j.getNombre();
-        	fila[2] = j.getApellidos();
-        	fila[3] = j.getNivel();
-        	fila[4] = j.getNacionalidad();
-			modelo.addRow(fila);
-		}
-        
-        //aplico el modelo
-        table.setModel(modelo);
+      
 	}
 		
 	}

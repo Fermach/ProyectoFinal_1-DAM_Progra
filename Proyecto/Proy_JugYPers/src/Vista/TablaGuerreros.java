@@ -16,7 +16,28 @@ public class TablaGuerreros extends JPanel {
 	private JTable table;
     DAO dao= new DAO();
     JButton btnNewButtonAtrasGuerreros = new JButton("<<");
+    String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
+	String fila[] = new String[5];
 	
+    DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+    
+    
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+
 	public JButton getBtnNewButtonAtrasGuerreros() {
 		return btnNewButtonAtrasGuerreros;
 	}
@@ -38,16 +59,16 @@ public class TablaGuerreros extends JPanel {
 		GroupLayout groupLayout = new GroupLayout(this);
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(groupLayout.createSequentialGroup()
+				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.LEADING)
 						.addComponent(btnNewButtonAtrasGuerreros, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
-						.addComponent(scrollPane, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
+						.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE))
 					.addContainerGap())
 		);
 		groupLayout.setVerticalGroup(
-			groupLayout.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, groupLayout.createSequentialGroup()
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
 					.addComponent(btnNewButtonAtrasGuerreros)
 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -59,23 +80,8 @@ public class TablaGuerreros extends JPanel {
 		scrollPane.setViewportView(table);
 		setLayout(groupLayout);
         
-		String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
-		String fila[] = new String[5];
 		
-        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
         
-      //Recorro la lista de la base de datos y añado cada personaje al modelo
-        for (Personaje p : dao.listaGuerreros()) {
-        	
-        	fila[0] = p.getNombre();
-        	fila[1] = p.getLogin();
-        	fila[2] = p.getTipo();
-        	fila[3] = p.getRaza();
-        	fila[4] = p.getSexo();
-			modelo.addRow(fila);
-		}
-        
-        //aplico el modelo
-        table.setModel(modelo);
+      
 	}
 }

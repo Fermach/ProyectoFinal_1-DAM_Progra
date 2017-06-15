@@ -14,13 +14,20 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
-<fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
 <fullyQualifiedTypeName name="Modelo.DTO.Personaje"/>
-<fullyQualifiedTypeName name="Vista.TablaJugadores"/>
 <fullyQualifiedTypeName name="Modelo.DTO.JugadorAntiguo"/>
-<fullyQualifiedTypeName name="Vista.TablaHistorial"/>
 <fullyQualifiedTypeName name="Modelo.DAO.DAO"/>
-<fullyQualifiedTypeName name="Vista.PantallaPrincipal"/>
-<fullyQualifiedTypeName name="Vista.TablaJugadoresAltoNivel"/>
 <fullyQualifiedTypeName name="org.sqlite.SQLiteConfig"/>
+<fullyQualifiedTypeName name="Vista.TablaPicaros"/>
+<fullyQualifiedTypeName name="Vista.TablaMagos"/>
+<fullyQualifiedTypeName name="Vista.TablaGuerreros"/>
+<fullyQualifiedTypeName name="Vista.TablaPersonajes"/>
+<fullyQualifiedTypeName name="Vista.TablaJugadoresAltoNivel"/>
+<fullyQualifiedTypeName name="Vista.TablaJugadores"/>
+<fullyQualifiedTypeName name="Vista.PantallaPrincipal"/>
+<fullyQualifiedTypeName name="Vista.TablaHistorial"/>
+<fullyQualifiedTypeName name="javax.naming.ldap.Control"/>
+<fullyQualifiedTypeName name="Controlador.Controlador"/>
+<fullyQualifiedTypeName name="Vista.Vista"/>
+<fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
 </qualifiedTypeNameHistroy>

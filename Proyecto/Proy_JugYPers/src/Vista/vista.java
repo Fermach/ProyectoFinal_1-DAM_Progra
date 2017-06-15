@@ -2,6 +2,7 @@ package Vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -10,6 +11,7 @@ import javax.swing.border.EmptyBorder;
 
 import Controlador.Controlador;
 import Modelo.DAO.DAO;
+import Modelo.DTO.JugadorAntiguo;
 
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
@@ -40,7 +42,7 @@ public class Vista extends JFrame {
 	}
 
 	public void setTmagos(TablaMagos tmagos) {
-		tmagos = tmagos;
+		this.tmagos = tmagos;
 	}
 
 	public TablaPicaros getTpicaros() {
@@ -48,7 +50,7 @@ public class Vista extends JFrame {
 	}
 
 	public void setTpicaros(TablaPicaros tpicaros) {
-		tpicaros = tpicaros;
+		this.tpicaros = tpicaros;
 	}
 
 	public TablaJugadoresAltoNivel getTjugnivAlto() {
@@ -56,7 +58,7 @@ public class Vista extends JFrame {
 	}
 
 	public void setTjugnivAlto(TablaJugadoresAltoNivel tjugnivAlto) {
-		tjugnivAlto = tjugnivAlto;
+		this.tjugnivAlto = tjugnivAlto;
 	}
 
 	public PantallaPrincipal getPantallaPrincipal() {
@@ -72,7 +74,7 @@ public class Vista extends JFrame {
 	}
 
 	public void setTjugadores(TablaJugadores tjugadores) {
-		tjugadores = tjugadores;
+		this.tjugadores = tjugadores;
 	}
 
 	public TablaPersonajes getTpersonajes() {
@@ -80,7 +82,7 @@ public class Vista extends JFrame {
 	}
 
 	public void setTpersonajes(TablaPersonajes tpersonajes) {
-		tpersonajes = tpersonajes;
+		this.tpersonajes = tpersonajes;
 	}
 
 	public TablaGuerreros getTguerreros() {
@@ -88,7 +90,7 @@ public class Vista extends JFrame {
 	}
 
 	public void setTguerreros(TablaGuerreros tguerreros) {
-		tguerreros = tguerreros;
+		this.tguerreros = tguerreros;
 	}
 
 	public TablaHistorial getThistorial() {
@@ -96,7 +98,7 @@ public class Vista extends JFrame {
 	}
 
 	public void setThistorial(TablaHistorial thistorial) {
-		thistorial = thistorial;
+		this.thistorial = thistorial;
 	}
 
 	public JMenuItem getMntmNewMenuMostrarJugadores() {

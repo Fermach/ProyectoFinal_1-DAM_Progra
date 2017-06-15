@@ -16,8 +16,37 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 public class TablaHistorial extends JPanel {
 	DAO dao = new DAO();
 	private JTable table_1;
-	
+	String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad", "Fecha"};
+	String filas[] = new String[6] ;
+	DefaultTableModel modelo= new DefaultTableModel(null, titulos);
 	JButton buttonAtrasHistorial = new JButton("<<");
+    
+	
+	public JTable getTable_1() {
+		return table_1;
+	}
+
+
+
+	public void setTable_1(JTable table_1) {
+		this.table_1 = table_1;
+	}
+
+
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+
+
+
+	
 	
 
 
@@ -66,28 +95,8 @@ public class TablaHistorial extends JPanel {
 		setLayout(groupLayout);
 		
 		
-		String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad", "fecha"};
-		String filas[] = new String[6] ;
 		
 		
-        DefaultTableModel modelo= new DefaultTableModel(null, titulos);
-	
-		//Recorro la lista de la base de datos y añado cada personaje al modelo
-		for (JugadorAntiguo jugador : dao.jugadoresAntiguos()) {
-			
-			filas[0]= jugador.getLogin();
-			filas[1]= jugador.getNombre();
-			filas[2]= jugador.getApellidos();
-			filas[3]= jugador.getNivel();
-			filas[4]= jugador.getNacionalidad();
-			filas[5]= jugador.getFecha_baja();
-			modelo.addRow(filas);
-			
-		}
-		
-		//le aplico el modelo
-		table_1.setModel(modelo);
-	
 	}
 
 }

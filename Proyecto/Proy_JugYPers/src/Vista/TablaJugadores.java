@@ -23,7 +23,28 @@ public class TablaJugadores extends JPanel {
 	DAO dao = new DAO();
 	private JTable table_1;
 	JButton buttonAtrasJugadores = new JButton("<<");
+	String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad"};
+	String filas[] = new String[5] ;
 	
+	
+    DefaultTableModel modelo= new DefaultTableModel(null, titulos);
+	
+	public JTable getTable_1() {
+		return table_1;
+	}
+
+	public void setTable_1(JTable table_1) {
+		this.table_1 = table_1;
+	}
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+
 	public JButton getButtonAtrasJugadores() {
 		return buttonAtrasJugadores;
 	}
@@ -67,26 +88,9 @@ public class TablaJugadores extends JPanel {
 		setLayout(groupLayout);
 		
 		
-		String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad"};
-		String filas[] = new String[5] ;
 		
-		
-        DefaultTableModel modelo= new DefaultTableModel(null, titulos);
 	
-		//Recorro la lista de la base de datos y añado cada personaje al modelo
-		for (Jugador jugador : dao.listaJugadores()) {
-			
-			filas[0]= jugador.getLogin();
-			filas[1]= jugador.getNombre();
-			filas[2]= jugador.getApellidos();
-			filas[3]= jugador.getNivel();
-			filas[4]= jugador.getNacionalidad();
-			modelo.addRow(filas);
-			
-		}
 		
-		//le aplico el modelo
-		table_1.setModel(modelo);
-	}
 
+}
 }

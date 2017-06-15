@@ -16,9 +16,36 @@ public class TablaPicaros extends JPanel {
 	private JTable table;
     DAO dao= new DAO();
     JButton buttonAtrasPicaros = new JButton("<<");
+    String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
+	String fila[] = new String[5];
+	
+    DefaultTableModel modelo = new DefaultTableModel(null, titulos);
     
     
-    
+	public JTable getTable() {
+		return table;
+	}
+
+
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+
+
+
 	public JButton getButtonVolverPicaros() {
 		return buttonAtrasPicaros;
 	}
@@ -62,24 +89,9 @@ public class TablaPicaros extends JPanel {
 			scrollPane.setViewportView(table);
 			setLayout(groupLayout);
 	        
-			String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
-			String fila[] = new String[5];
 			
-	        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
 	        
-	      //Recorro la lista de la base de datos y añado cada personaje al modelo
-	        for (Personaje p : dao.listaPicaros()) {
-	        	
-	        	fila[0] = p.getNombre();
-	        	fila[1] = p.getLogin();
-	        	fila[2] = p.getTipo();
-	        	fila[3] = p.getRaza();
-	        	fila[4] = p.getSexo();
-				modelo.addRow(fila);
-			}
-	        
-	        //aplico el modelo
-	        table.setModel(modelo);
+	     
 	}
 
 }

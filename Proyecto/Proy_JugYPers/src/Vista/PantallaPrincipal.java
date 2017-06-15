@@ -26,6 +26,19 @@ public class PantallaPrincipal extends JPanel {
 	JButton BotonAtras = new JButton("<");
 	JButton AñadirBoton = new JButton("Nuevo");
 	JButton BorrarBoton = new JButton("Borrar");
+	
+	public JButton getBorrarBoton() {
+		return BorrarBoton;
+	}
+
+
+
+	public void setBorrarBoton(JButton borrarBoton) {
+		BorrarBoton = borrarBoton;
+	}
+
+
+
 	JButton BotonAdelante = new JButton(">");
 	JButton buttonmas = new JButton("+");
 	
@@ -179,18 +192,6 @@ public class PantallaPrincipal extends JPanel {
 
 	public void setAñadirBoton(JButton añadirBoton) {
 		AñadirBoton = añadirBoton;
-	}
-
-
-
-	public JButton getBorrarBoton() {
-		return BorrarBoton;
-	}
-
-
-
-	public void setBorrarBoton(JButton borrarBoton) {
-		BorrarBoton = borrarBoton;
 	}
 
 

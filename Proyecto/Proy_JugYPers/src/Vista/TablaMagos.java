@@ -15,8 +15,37 @@ import Modelo.DTO.Personaje;
 public class TablaMagos extends JPanel {
 	private JTable table;
     DAO dao= new DAO();
+	String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
+	String fila[] = new String[5];
+	
+    DefaultTableModel modelo = new DefaultTableModel(null, titulos);
     
-    JButton buttonAtrasMagos = new JButton("<<");
+   
+    
+    public JTable getTable() {
+		return table;
+	}
+
+
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+
+
+	public DefaultTableModel getModelo() {
+		return modelo;
+	}
+
+
+
+	public void setModelo(DefaultTableModel modelo) {
+		this.modelo = modelo;
+	}
+
+
+	JButton buttonAtrasMagos = new JButton("<<");
     
 
 	public JButton getButtonAtrasMagos() {
@@ -63,24 +92,9 @@ public class TablaMagos extends JPanel {
 			scrollPane.setViewportView(table);
 			setLayout(groupLayout);
 	        
-			String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
-			String fila[] = new String[5];
-			
-	        DefaultTableModel modelo = new DefaultTableModel(null, titulos);
+		
 	        
-	      //Recorro la lista de la base de datos y añado cada personaje al modelo
-	        for (Personaje p : dao.listaMagos()) {
-	        	
-	        	fila[0] = p.getNombre();
-	        	fila[1] = p.getLogin();
-	        	fila[2] = p.getTipo();
-	        	fila[3] = p.getRaza();
-	        	fila[4] = p.getSexo();
-				modelo.addRow(fila);
-			}
-	        
-	        //aplico el modelo
-	        table.setModel(modelo);
+	      
 	}
 
 }

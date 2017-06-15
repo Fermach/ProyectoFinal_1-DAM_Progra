@@ -18,7 +18,7 @@ private static Connection conexion = null;
 			Class.forName("org.sqlite.JDBC");
 			try {
 				conexion = DriverManager.
-						getConnection("jdbc:sqlite:BD/bd_juYpers", config.toProperties());
+						getConnection("jdbc:sqlite:BD/bd_jugYpers", config.toProperties());
 			} catch (SQLException e) {
 				System.out.println("Error al acceso de la BD");
 			}
