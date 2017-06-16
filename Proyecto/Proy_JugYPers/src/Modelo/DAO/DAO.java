@@ -210,7 +210,6 @@ public class DAO implements IDAO {
 	public boolean añadirJugador(Jugador j) {
 		boolean exito = false;
 		
-		if(j.getNivel() == "bajo"|| j.getNivel() == "medio" || j.getNivel() =="alto"){
 		
 		sql = "INSERT INTO jugadores VALUES (?, ?, ?, ?, ?)";
 		try {
@@ -231,10 +230,7 @@ public class DAO implements IDAO {
 			System.out.println("Error en la insercción de datos de la BD");
 
 		}
-		}else{
-			
-			System.out.println("Nivel no valido: debe ser bajo, medio o alto");
-		}
+		
 		return exito;
 	}
 
@@ -280,9 +276,7 @@ public class DAO implements IDAO {
 	    sql = "INSERT INTO personajes VALUES (?, ? , ?, ?, ?)";
 	    
 	    // CONTROLO EL TIPO , LA RAZA , Y EL SEXO
-	    if(p.getTipo() =="guerrero" || p.getTipo()== "mago" || p.getTipo()=="picaro"){
-	    if(p.getRaza()=="elfo" || p.getRaza()== "caballero_oscuro" || p.getRaza()=="nordico" || p.getRaza()== "argoniano"){
-	    if(p.getSexo()== "M" || p.getSexo()== "F"){  
+	     
 	    	 
 		try {
 			pre = conex.prepareStatement(sql);
@@ -301,18 +295,7 @@ public class DAO implements IDAO {
 			System.out.println("Error en la insercción de datos de la BD");
 
 		}
-	    }else{
-	    	System.out.println("Sexo no valido: debe ser M o F");
-	    	
-	    }
-	    }else{
-	    	System.out.println("Raza no valida: debe ser elfo, caballero_oscuro, nordico o argoniano");
-	    	
-	    }
-	    }else{
-		    System.out.println("Tipo no valido debe ser : guerrero, mago o picaro");
-		
-	}
+	    
 		return exito;
 	}
 

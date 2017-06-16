@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class PantallaPrincipal extends JPanel {
 	private JTextField textFieldLogin;
@@ -223,10 +224,10 @@ public class PantallaPrincipal extends JPanel {
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 214, GroupLayout.PREFERRED_SIZE)
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-					.addGap(30))
+					.addComponent(panel, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(12, Short.MAX_VALUE))
 		);
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -234,7 +235,7 @@ public class PantallaPrincipal extends JPanel {
 					.addContainerGap()
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
 						.addComponent(panel, GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
-						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE))
+						.addComponent(panel_1, GroupLayout.PREFERRED_SIZE, 312, Short.MAX_VALUE))
 					.addGap(9))
 		);
 		
@@ -267,64 +268,82 @@ public class PantallaPrincipal extends JPanel {
 		textFieldLogin2 = new JTextField();
 		textFieldLogin2.setEditable(false);
 		textFieldLogin2.setColumns(10);
+		
+		JLabel lblmOF = new JLabel("(M o F)");
+		lblmOF.setFont(new Font("Tahoma", Font.ITALIC, 8));
+		
+		JLabel lblguerreroMagoO = new JLabel("(Guerrero, Mago o Picaro)");
+		lblguerreroMagoO.setFont(new Font("Tahoma", Font.ITALIC, 8));
+		
+		JLabel lblelfoNordicoArgoniano = new JLabel("(Elfo, Nordico, Argoniano");
+		lblelfoNordicoArgoniano.setFont(new Font("Tahoma", Font.ITALIC, 8));
+		
+		JLabel lblNewLabel_6 = new JLabel("o caballero_oscuro)");
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.ITALIC, 8));
 		GroupLayout gl_panel_1 = new GroupLayout(panel_1);
 		gl_panel_1.setHorizontalGroup(
-			gl_panel_1.createParallelGroup(Alignment.LEADING)
+			gl_panel_1.createParallelGroup(Alignment.TRAILING)
 				.addGroup(gl_panel_1.createSequentialGroup()
 					.addContainerGap()
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-						.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-							.addComponent(lblNewLabel_5)
-							.addGap(18)
-							.addComponent(textFieldLogin2, 62, 62, 62)
-							.addGap(21))
-						.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
-							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-									.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
+						.addGroup(gl_panel_1.createSequentialGroup()
+							.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addComponent(lblNewLabel_5)
+									.addGap(18)
+									.addComponent(textFieldLogin2, 62, 62, 62))
+								.addGroup(gl_panel_1.createSequentialGroup()
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+										.addComponent(lblNewLabel_2)
 										.addComponent(lblNewLabel_4)
-										.addGap(40))
-									.addGroup(gl_panel_1.createSequentialGroup()
-										.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
-										.addGap(30)))
-								.addGroup(gl_panel_1.createSequentialGroup()
-									.addComponent(lblNewLabel_2)
-									.addPreferredGap(ComponentPlacement.RELATED))
-								.addGroup(gl_panel_1.createSequentialGroup()
-									.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-									.addPreferredGap(ComponentPlacement.RELATED)))
-							.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING, false)
-									.addComponent(textFieldRaza, 74, 74, Short.MAX_VALUE)
-									.addComponent(textFieldSexo, 0, 0, Short.MAX_VALUE)
-									.addComponent(textFieldNombre2, 0, 0, Short.MAX_VALUE))
-								.addComponent(textFieldTipo, 0, 0, Short.MAX_VALUE))))
-					.addGap(38))
+										.addComponent(lblNewLabel_3, GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+										.addComponent(lblNewLabel_1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+										.addComponent(textFieldRaza, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+										.addComponent(textFieldSexo, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+										.addComponent(textFieldTipo, GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+										.addComponent(lblguerreroMagoO, GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
+										.addComponent(lblelfoNordicoArgoniano, GroupLayout.PREFERRED_SIZE, 120, Short.MAX_VALUE)
+										.addComponent(lblmOF, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
+										.addComponent(textFieldNombre2, GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))))
+							.addGap(38))
+						.addGroup(Alignment.TRAILING, gl_panel_1.createSequentialGroup()
+							.addComponent(lblNewLabel_6, GroupLayout.PREFERRED_SIZE, 80, GroupLayout.PREFERRED_SIZE)
+							.addGap(55))))
 		);
 		gl_panel_1.setVerticalGroup(
 			gl_panel_1.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_1.createSequentialGroup()
-					.addGap(25)
+					.addGap(23)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textFieldNombre2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_1))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textFieldTipo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNewLabel_2))
-					.addPreferredGap(ComponentPlacement.UNRELATED)
+						.addComponent(lblNewLabel_1)
+						.addComponent(textFieldNombre2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addGap(18)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblNewLabel_2)
+						.addComponent(textFieldTipo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblguerreroMagoO, GroupLayout.PREFERRED_SIZE, 15, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNewLabel_3)
 						.addComponent(textFieldRaza, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblelfoNordicoArgoniano)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblNewLabel_6)
 					.addPreferredGap(ComponentPlacement.UNRELATED)
-					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
+					.addGroup(gl_panel_1.createParallelGroup(Alignment.TRAILING)
 						.addComponent(lblNewLabel_4)
 						.addComponent(textFieldSexo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(30)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblmOF)
+					.addGap(43)
 					.addGroup(gl_panel_1.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel_5)
-						.addComponent(textFieldLogin2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(69))
+						.addComponent(textFieldLogin2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lblNewLabel_5))
+					.addGap(30))
 		);
 		panel_1.setLayout(gl_panel_1);
 		
@@ -370,46 +389,60 @@ public class PantallaPrincipal extends JPanel {
 			}
 		});
 		
+		JLabel lblbajoMedioO = new JLabel("(bajo, medio o alto)");
+		lblbajoMedioO.setFont(new Font("Tahoma", Font.ITALIC, 8));
+		
 		
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
+			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
-					.addContainerGap()
 					.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel.createSequentialGroup()
+							.addContainerGap()
 							.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
 								.addGroup(gl_panel.createSequentialGroup()
 									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-										.addComponent(lblNombre)
-										.addComponent(lblNewLabel))
-									.addGap(35)
-									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-										.addComponent(textFieldLogin, 63, 63, 63)
-										.addComponent(textFieldNombre, 63, 63, 63)))
+										.addGroup(gl_panel.createSequentialGroup()
+											.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+												.addComponent(lblNombre)
+												.addComponent(lblNewLabel))
+											.addGap(35)
+											.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+												.addComponent(textFieldLogin, 63, 63, 63)
+												.addComponent(textFieldNombre, 63, 63, 63)))
+										.addGroup(gl_panel.createSequentialGroup()
+											.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+												.addComponent(lblNivel)
+												.addComponent(lblNacionalidad)
+												.addComponent(lblApellidos))
+											.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+												.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
+													.addGroup(gl_panel.createSequentialGroup()
+														.addGap(36)
+														.addGroup(gl_panel.createParallelGroup(Alignment.LEADING)
+															.addComponent(textFieldNivel, GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+															.addComponent(lblbajoMedioO))
+														.addPreferredGap(ComponentPlacement.RELATED))
+													.addGroup(gl_panel.createSequentialGroup()
+														.addPreferredGap(ComponentPlacement.RELATED)
+														.addComponent(textFieldApellidos, 63, 63, 63)))
+												.addGroup(gl_panel.createSequentialGroup()
+													.addPreferredGap(ComponentPlacement.RELATED)
+													.addComponent(textFieldNacionalidad, 63, 63, 63)))))
+									.addGap(5))
 								.addGroup(gl_panel.createSequentialGroup()
-									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-										.addComponent(lblNivel)
-										.addComponent(lblNacionalidad)
-										.addComponent(lblApellidos))
-									.addGap(36)
-									.addGroup(gl_panel.createParallelGroup(Alignment.TRAILING)
-										.addComponent(textFieldApellidos, 63, 63, 63)
-										.addComponent(textFieldNacionalidad, 63, 63, 63)
-										.addComponent(textFieldNivel, 63, 63, 63))
-									.addPreferredGap(ComponentPlacement.RELATED)))
-							.addGap(5))
+									.addGap(15)
+									.addComponent(AñadirBoton, GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
+									.addPreferredGap(ComponentPlacement.RELATED)
+									.addComponent(buttonmas, GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))))
 						.addGroup(gl_panel.createSequentialGroup()
+							.addGap(11)
 							.addComponent(BotonAtras, GroupLayout.PREFERRED_SIZE, 52, Short.MAX_VALUE)
 							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(BotonAdelante, GroupLayout.PREFERRED_SIZE, 52, Short.MAX_VALUE)
-							.addGap(9)
-							.addComponent(BorrarBoton))
-						.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
-							.addGap(37)
-							.addComponent(AñadirBoton, GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(buttonmas, GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE)))
+							.addComponent(BotonAdelante, GroupLayout.PREFERRED_SIZE, 53, Short.MAX_VALUE)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(BorrarBoton)))
 					.addContainerGap())
 		);
 		gl_panel.setVerticalGroup(
@@ -425,33 +458,31 @@ public class PantallaPrincipal extends JPanel {
 						.addComponent(lblNombre))
 					.addGap(14)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textFieldApellidos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblApellidos))
+						.addComponent(lblApellidos)
+						.addComponent(textFieldApellidos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(14)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lblNacionalidad)
 						.addComponent(textFieldNacionalidad, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(14)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(textFieldNivel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblNivel))
-					.addGap(20)
+						.addComponent(lblNivel)
+						.addComponent(textFieldNivel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(lblbajoMedioO)
+					.addGap(29)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
 						.addComponent(buttonmas)
 						.addComponent(AñadirBoton, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addGroup(gl_panel.createParallelGroup(Alignment.BASELINE)
-						.addComponent(BotonAtras)
 						.addComponent(BotonAdelante)
+						.addComponent(BotonAtras)
 						.addComponent(BorrarBoton, GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
-					.addGap(8))
+					.addContainerGap())
 		);
 		panel.setLayout(gl_panel);
 		setLayout(groupLayout);
 
 	}
-
-
-
-	
 }

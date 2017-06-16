@@ -13,7 +13,7 @@ PRIMARY KEY(login)
 
 DROP TABLE IF EXISTS personajes;
 CREATE TABLE personajes (
-        nombre TEXT,
+        nombre TEXT NOT NULL,
         login TEXT NOT NULL,
         tipo TEXT,
         raza TEXT,

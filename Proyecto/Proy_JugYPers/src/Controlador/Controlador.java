@@ -74,20 +74,43 @@ import java.sql.Connection;
        
        if (e.getActionCommand().equals("+")){
 		   if(vista.getPantallaPrincipal().getTextFieldLogin().isEditable() == true) {
+			   
     	   
+		   Jugador ju = recogerJugador();   
+		   Personaje pe = recogerPersonaje();
+		   
     	   System.out.println("entra el if de +");
-    	   System.out.println(recogerJugador());
-    	   System.out.println(recogerPersonaje());
+    	   System.out.println(ju);
+    	   System.out.println(pe);
     	   
-		     dao.añadirJugador(recogerJugador());
-		     dao.añadirPersonaje(recogerPersonaje());  
+    	   if(ju.getLogin() != null || ju.getLogin() != "" ){
+    	   if(ju.getNivel().equals("bajo") || ju.getNivel().equals("medio") || ju.getNivel().equals("alto")){
+           if(pe.getTipo().equals("guerrero") || pe.getTipo().equals("mago") || pe.getTipo().equals("picaro")){
+           if(pe.getRaza().equals("elfo") || pe.getRaza().equals("caballero_oscuro") || pe.getRaza().equals("nordico") || pe.getRaza().equals("argoniano")){
+    	   if(pe.getSexo().equals("M") || pe.getSexo().equals("F")){ 
+    	   
+		     dao.añadirJugador(ju);
+		     dao.añadirPersonaje(pe);  
 		     listaJugador = dao.listaJugadores();
 		     listaPersonajes =dao.listaPersonajes();
 		     //System.out.println("Jugador y Personajes añadidos");
 		     deshabilitarTextField();
-		   }else{
+		   
+    	   }else
+    	   System.out.println("Sexo erroneo: debe ser M o F");
+           }else
+    	   System.out.println("Raza erronea: debe ser elfo, caballero_oscuro, nordico o argoniano");   
+           }else
+           System.out.println("Tipo errorneo: debe ser guerrero, mago o picaro"); 
+    	   }else
+    	   System.out.println("Nivel erroneo: debe ser bajo, medio o alto");
+    	   }else
+    	   System.out.println("Login no valido");
+    	   
+    	   
+    	   }else{
 			   
-			   System.out.println("debe pulsar nuevo antes");
+			   System.out.println("Debe pulsar \"Nuevo\" antes !!");
 		   }  
 		     
 	   }
