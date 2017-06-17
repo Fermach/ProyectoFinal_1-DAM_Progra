@@ -12,7 +12,11 @@ import Modelo.DAO.DAO;
 import Modelo.DTO.Jugador;
 import Modelo.DTO.JugadorAntiguo;
 import javax.swing.LayoutStyle.ComponentPlacement;
-
+/**
+ * JTable de los Jugadores Antiguos 
+ * @author Fermach
+ *
+ */
 public class TablaHistorial extends JPanel {
 	DAO dao = new DAO();
 	private JTable table_1;

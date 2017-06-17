@@ -1,5 +1,9 @@
 package Modelo.DTO;
-
+/**
+ * Modelo de jugador 
+ * @author Fermach
+ *
+ */
 public class Jugador {
 
 	String login;
@@ -8,6 +12,14 @@ public class Jugador {
 	String nivel;
 	String nacionalidad;
 	
+	/**
+	 * 
+	 * @param login
+	 * @param nombre
+	 * @param apellidos
+	 * @param nivel
+	 * @param nacionalidad
+	 */
 	public Jugador(String login, String nombre, String apellidos, String nivel, String nacionalidad) {
 	    this.login=login;
 		this.nombre = nombre;
@@ -61,7 +73,8 @@ public class Jugador {
 		return "Jugador [login=" + login + ", nombre=" + nombre + ", apellidos=" + apellidos + ", nivel=" + nivel
 				+ ", nacionalidad=" + nacionalidad + "]"+"\n";
 	}
-
+    //sobrescribimos hashcode y equals para compara en funcion
+	//al login
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -69,7 +82,7 @@ public class Jugador {
 		result = prime * result + ((login == null) ? 0 : login.hashCode());
 		return result;
 	}
-
+    
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

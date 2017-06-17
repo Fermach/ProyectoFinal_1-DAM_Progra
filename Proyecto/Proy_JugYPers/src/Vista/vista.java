@@ -16,7 +16,11 @@ import Modelo.DTO.JugadorAntiguo;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-
+/**
+ * Frame principal de nuestra vista en el cual añadiremos los demas paneles
+ * @author Fermach
+ *
+ */
 public class Vista extends JFrame {
 
     private static JPanel contentPane= new JPanel();
@@ -169,6 +173,7 @@ public class Vista extends JFrame {
 					DAO dao = new DAO();
 					new Controlador(frame , dao);
 					frame.setVisible(true);
+					//inicializamos el Frame con el panel de Pantalla Principal
 					contentPane.add(pantallaPrincipal, BorderLayout.CENTER);
 					
 				} catch (Exception e) {
@@ -188,6 +193,7 @@ public class Vista extends JFrame {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 492, 440);
+		
 		setResizable(false);
 		
 		JMenuBar menuBar = new JMenuBar();

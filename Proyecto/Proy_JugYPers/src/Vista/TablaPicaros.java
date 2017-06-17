@@ -11,7 +11,11 @@ import javax.swing.table.DefaultTableModel;
 
 import Modelo.DAO.DAO;
 import Modelo.DTO.Personaje;
-
+/**
+ * JTable de los Personajes que son Picaros de nuestra BD
+ * @author Fermach
+ *
+ */
 public class TablaPicaros extends JPanel {
 	private JTable table;
     DAO dao= new DAO();

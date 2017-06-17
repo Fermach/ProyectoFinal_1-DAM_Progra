@@ -14,8 +14,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 
-
-  public class Controlador implements ActionListener {
+/**
+ * Este es el controlador de la aplicacion, el cual sirve para 
+ * controlar nuestra vista y sus botones
+ * @author Fermach
+ * @version 1.0.
+ * 
+ */
+ public class Controlador implements ActionListener {
 	 private Vista vista;
 	 private DAO dao;
 	 private List<Jugador> listaJugador;
@@ -23,7 +29,11 @@ import java.sql.Connection;
 	 private static int contador = 0;
 
 
-
+   /**
+    * Constructor del controlador
+    * @param vista 
+    * @param dao (es el que tiene los metodos para acceder a la bd)
+    */
 	public Controlador(Vista vista, DAO dao) {
 		this.vista = vista;
 		this.dao  = dao;
@@ -36,9 +46,13 @@ import java.sql.Connection;
 
 
 
-	//respuesta a los eventos de la vista
+	/**
+	 * @param ActionEvent
+	 * Respuesta a los eventos de la vista
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
+	
 		if (e.getActionCommand().equals(">")){
             //mostramor el jugador
 			contador++;
@@ -60,7 +74,7 @@ import java.sql.Connection;
 	   if (e.getActionCommand().equals("Borrar")){
 		   System.out.println("entra el if de borrar");
 		 
-           dao.borrarJugador(recogerJugador());
+           dao.borrarJugador(recogerJugador());//tambien borra al personaje asociado a ese jugador gracias a la FK
 		   listaJugador= dao.listaJugadores();
 		   listaPersonajes = dao.listaPersonajes();
 		   
@@ -74,7 +88,7 @@ import java.sql.Connection;
        
        if (e.getActionCommand().equals("+")){
 		   if(vista.getPantallaPrincipal().getTextFieldLogin().isEditable() == true) {
-			   
+		   //Compruebo que el usuario ha pulsado el boton Nuvo antes para habilitar TextFields   	
     	   
 		   Jugador ju = recogerJugador();   
 		   Personaje pe = recogerPersonaje();
@@ -82,7 +96,7 @@ import java.sql.Connection;
     	   System.out.println("entra el if de +");
     	   System.out.println(ju);
     	   System.out.println(pe);
-    	   
+    	   //Controlo los datos que introduce el usuario
     	   if(ju.getLogin() != null || ju.getLogin() != "" ){
     	   if(ju.getNivel().equals("bajo") || ju.getNivel().equals("medio") || ju.getNivel().equals("alto")){
            if(pe.getTipo().equals("guerrero") || pe.getTipo().equals("mago") || pe.getTipo().equals("picaro")){
@@ -171,14 +185,17 @@ import java.sql.Connection;
     	   vista.repaint();
     	   vista.revalidate();
        }
-       
+      
        
        
        }
        
  
 	
-	//registro los eventos de la vista
+	/**
+	 * Registro los eventos de la vista
+	 * @param escuchador
+	 */
 	public void actionListener(ActionListener escuchador){
 		vista.getPantallaPrincipal().getBotonAtras().addActionListener(escuchador);
 		vista.getPantallaPrincipal().getBotonAdelante().addActionListener(escuchador);
@@ -204,7 +221,10 @@ import java.sql.Connection;
 		
 		
 	}
-	
+	/**
+	 * Muestra el jugador de la lista del DAO en nuestra interfaz
+	 * @param indice
+	 */
 	private void mostrarJugador(int indice){
 		vista.getPantallaPrincipal().getTextFieldLogin().setText(
 				listaJugador.get(indice).getLogin());
@@ -217,6 +237,11 @@ import java.sql.Connection;
 		vista.getPantallaPrincipal().getTextFieldNacionalidad().setText(
 				listaJugador.get(indice).getNacionalidad());
 	}
+	
+	/**
+	 * Muestra el jugador de la lista del DAO en nuestra interfaz
+	 * @param indice
+	 */
 	private void mostrarPersonaje(int indice){
 		vista.getPantallaPrincipal().getTextFieldNombre2().setText(
 				listaPersonajes.get(indice).getNombre());
@@ -253,7 +278,10 @@ import java.sql.Connection;
 		vista.getPantallaPrincipal().getTextFieldSexo().setEditable(false);
 	}
 	
-	//recogemos los datos del jugador
+	/**
+	 * Recogemos los datos del jugador introducidos en los TextsFields
+	 * @return jugador
+	 */
 	private Jugador recogerJugador(){
 		
 		
@@ -267,7 +295,10 @@ import java.sql.Connection;
 		return jugador;
 	}
 	
-	//recojemos los datos del personaje
+	/**
+	 * Recogemos los datos del personaje introducidos en los TextsFields
+	 * @return personaje
+	 */
 	private Personaje recogerPersonaje(){
 		
 		String nombre = vista.getPantallaPrincipal().getTextFieldNombre2().getText();
@@ -282,6 +313,7 @@ import java.sql.Connection;
 		return personaje;
 	}
 	
+	//obtiene el modelo del JTABLE a partir de nuestro DAO
 	 public void actualizarJTableHistorial(){
 			
 		   String filas[] = new String[6] ;

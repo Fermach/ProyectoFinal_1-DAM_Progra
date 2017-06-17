@@ -1,9 +1,23 @@
 package Modelo.DTO;
-
+/**
+ * Modelo de jugador antiguo que se añadira a la tabla
+ * historial tras el borrado de un jugador de la BD debido al uso de 
+ * un Trigger de borrado
+ * @author Fermach
+ *
+ */
 public class JugadorAntiguo extends Jugador {
 
 	String fecha_baja;
-	
+	/**
+	 * 
+	 * @param nombre
+	 * @param apellidos
+	 * @param nacionalidad
+	 * @param login
+	 * @param nivel
+	 * @param fecha_baja
+	 */
 	public JugadorAntiguo(String nombre, String apellidos, String nacionalidad, String login, String nivel, String fecha_baja) {
 		super(nombre, apellidos, nacionalidad, login, nivel);
         this.fecha_baja=fecha_baja;

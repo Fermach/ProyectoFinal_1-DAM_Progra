@@ -11,7 +11,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
-
+/**
+ * Pantalla principal de nuestra vista
+ * @author Fermach
+ *
+ */
 public class PantallaPrincipal extends JPanel {
 	private JTextField textFieldLogin;
 	private JTextField textFieldNombre;
@@ -31,15 +35,15 @@ public class PantallaPrincipal extends JPanel {
 	public JButton getBorrarBoton() {
 		return BorrarBoton;
 	}
+   
 
-
-
+    
 	public void setBorrarBoton(JButton borrarBoton) {
 		BorrarBoton = borrarBoton;
 	}
 
 
-
+   
 	JButton BotonAdelante = new JButton(">");
 	JButton buttonmas = new JButton("+");
 	

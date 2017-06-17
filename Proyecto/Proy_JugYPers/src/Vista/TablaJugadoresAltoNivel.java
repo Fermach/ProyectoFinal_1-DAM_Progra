@@ -12,7 +12,11 @@ import javax.swing.table.DefaultTableModel;
 import Modelo.DAO.DAO;
 import Modelo.DTO.Jugador;
 import Modelo.DTO.Personaje;
-
+/**
+ * JTable de los jugadores de nivel alto de nuestra BD
+ * @author Fermach
+ *
+ */
 public class TablaJugadoresAltoNivel extends JPanel {
 
 	private JTable table;

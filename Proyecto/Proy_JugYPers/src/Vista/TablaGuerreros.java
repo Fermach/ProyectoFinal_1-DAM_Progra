@@ -11,7 +11,11 @@ import javax.swing.table.DefaultTableModel;
 
 import Modelo.DAO.DAO;
 import Modelo.DTO.Personaje;
-
+/**
+ * JTable de los personajes que son guerreros
+ * @author Fermach
+ *
+ */
 public class TablaGuerreros extends JPanel {
 	private JTable table;
     DAO dao= new DAO();

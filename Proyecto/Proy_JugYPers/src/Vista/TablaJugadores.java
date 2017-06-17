@@ -15,7 +15,11 @@ import javax.swing.JTabbedPane;
 import javax.swing.JButton;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.table.DefaultTableModel;
-
+/**
+ * JTable de los jugadores de nuestra BD
+ * @author Fermach
+ *
+ */
 public class TablaJugadores extends JPanel {
     
 	List<Jugador> listaJugadores= new ArrayList<>();

@@ -5,7 +5,11 @@ import java.util.List;
 import Modelo.DTO.Jugador;
 import Modelo.DTO.JugadorAntiguo;
 import Modelo.DTO.Personaje;
-
+/**
+ * Interfaz del DAO
+ * @author Fermach
+ *
+ */
 public interface IDAO {
 
 	List<Personaje> listaPersonajes();

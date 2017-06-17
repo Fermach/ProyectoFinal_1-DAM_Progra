@@ -12,7 +12,11 @@ import Modelo.DAO.DAO;
 import Modelo.DTO.Personaje;
 
 import javax.swing.JTable;
-
+/**
+ * JTable de los Personajes de nuestra BD
+ * @author Fermach
+ *
+ */
 public class TablaPersonajes extends JPanel {
 	private JTable table;
     DAO dao= new DAO();

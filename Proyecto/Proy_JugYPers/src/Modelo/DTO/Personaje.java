@@ -1,5 +1,9 @@
 package Modelo.DTO;
-
+/**
+ * Modelo de Personaje de la BD
+ * @author Fermach
+ *
+ */
 public class Personaje {
 
 	String nombre;
@@ -9,7 +13,14 @@ public class Personaje {
 	String sexo;
 	
 	
-
+/**
+ * 
+ * @param nombre
+ * @param login
+ * @param tipo
+ * @param raza
+ * @param sexo
+ */
 	public Personaje(String nombre, String login, String tipo, String raza, String sexo) {
 		super();
 		this.nombre = nombre;

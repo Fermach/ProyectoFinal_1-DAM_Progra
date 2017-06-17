@@ -6,6 +6,12 @@ import java.sql.SQLException;
 
 import org.sqlite.SQLiteConfig;
 
+/**
+ * Establece una conexion Singletone para que
+ * solo pueda existir una conexion a la bd
+ * @author Fermach
+ *
+ */
 public class Conexion {
 
 private static Connection conexion = null;
@@ -26,7 +32,10 @@ private static Connection conexion = null;
 			System.out.println("jdbc no encotrador");
 		}
 	}
-	//creamos la conexion de forma unica
+	/**
+	 * Creamos la conexion de forma unica
+	 * @return conexion
+	 */
 	public static Connection getInstance(){
 		if (conexion == null){
 			new Conexion();

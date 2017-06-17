@@ -12,7 +12,12 @@ import java.util.List;
 import Modelo.DTO.Jugador;
 import Modelo.DTO.JugadorAntiguo;
 import Modelo.DTO.Personaje;
-
+/**
+ * Conjunto de metodos que acceden a la base de datos para hacer 
+ * consultas, acuaizaciones y borrados de esta.
+ * @author Fermach
+ *
+ */
 public class DAO implements IDAO {
 
 	/**
@@ -46,7 +51,9 @@ public class DAO implements IDAO {
 	}
 	
 	
-	
+	/**
+	 * @return Lista de personajes del la BD-
+	 */
 	@Override
 	public List<Personaje> listaPersonajes() {
 		// TODO Auto-generated method stub
@@ -71,6 +78,9 @@ public class DAO implements IDAO {
 		return listaPersonajes;
 	}
 
+	/**
+	 * @return Lista de jugadores de la BD
+	 */
 	@Override
 	public List<Jugador> listaJugadores() {
 		// TODO Auto-generated method stub
@@ -96,6 +106,9 @@ public class DAO implements IDAO {
 		return listaJugadores;
 	}
 
+	/**
+	 * @return Lista de guerreros de la BD
+	 */
 	@Override
 	public List<Personaje> listaGuerreros() {
 		// TODO Auto-generated method stub
@@ -119,7 +132,10 @@ public class DAO implements IDAO {
 		}
 		return listaGuerreros;
 	}
-
+    
+	/**
+	 * @return Lista de magos de la BD.
+	 */
 	@Override
 	public List<Personaje> listaMagos() {
 		// TODO Auto-generated method stub
@@ -144,6 +160,9 @@ public class DAO implements IDAO {
 		return listaMagos;
 	}
 
+	/**
+	 * @return Lista de picaros de la BD
+	 */
 	@Override
 	public List<Personaje> listaPicaros() {
 		// TODO Auto-generated method stub
@@ -168,6 +187,9 @@ public class DAO implements IDAO {
 		return listaPicaros;
 	}
 
+	/**
+	 * @return Lista de jugadores con nivel alto en a BD
+	 */
 	@Override
 	public List<Jugador> jugadoresNivelAlto() {
 		// TODO Auto-generated method stub
@@ -192,7 +214,12 @@ public class DAO implements IDAO {
 		}
 		return listaJugadoresAvanzados;
 	}
-
+    
+	/**
+	 * Comprueba que un jugador exista o no en la BD
+	 * @param Jugador 
+	 * @return Boolean de si existe o no
+	 */
 	@Override
 	public boolean existeJugador(Jugador j) {
 		// TODO Auto-generated method stub
@@ -205,7 +232,12 @@ public class DAO implements IDAO {
 		
 		return false;
 	}
-
+    
+	/**
+	 * Añade un jugador a la BD
+	 * @param Jugador a añadir
+	 * @return Boolean de si se ha añadido o no
+	 */
 	@Override
 	public boolean añadirJugador(Jugador j) {
 		boolean exito = false;
@@ -234,6 +266,10 @@ public class DAO implements IDAO {
 		return exito;
 	}
 
+	/**
+	 * @param Jugador a eliminar
+	 * @return Boolean de si el jugador se ha eliminado o no
+	 */
 	@Override
 	public boolean borrarJugador(Jugador j) {
 		// delete from user where login = "1";
@@ -253,7 +289,11 @@ public class DAO implements IDAO {
 			}
 			return exito;
 	}
-
+    /**
+     * 
+     * Comprueba que el personaje exista el la BD
+     * @return Boolean de si existe o no
+     */
 	@Override
 	public boolean existePersonaje(Personaje p) {
 		// TODO Auto-generated method stub
@@ -267,7 +307,11 @@ public class DAO implements IDAO {
 		return false;
 		
 	}
-
+    /**
+     * Añade un personaje a la BD
+     * @param Personaje a añadir
+     * @return Boolean de si el personaje se ha añadido o no
+     */
 	@Override
 	public boolean añadirPersonaje(Personaje p) {
       
@@ -298,7 +342,12 @@ public class DAO implements IDAO {
 	    
 		return exito;
 	}
-
+    
+	/**
+	 * Elimina un personaje de la BD
+	 * @param Personaje a eliminar
+	 * @return Boolean de si se ha eliminado o no
+	 */
 	@Override
 	public boolean borrarPersonaje(Personaje p) {
 		// TODO Auto-generated method stub
@@ -321,7 +370,11 @@ public class DAO implements IDAO {
 		return exito;
 		
 	}
-
+    
+	/**
+	 * Obitiene la lista de jugadores antiguos de la BD
+	 * @return Lista de jugadores antiguos
+	 */
 	@Override
 	public List<JugadorAntiguo> jugadoresAntiguos() {
 		// TODO Auto-generated method stub
@@ -348,18 +401,17 @@ public class DAO implements IDAO {
 	}
 
 
-
+    /**
+     * Nos permite modificar un personaje de la BD
+     * @param Personaje a modificar
+     */
 	public boolean modificarPersonaje(Personaje p) {
 		// TODO Auto-generated method stub
 		boolean exito = false;
 		sql = "UPDATE personajes SET nombre = ?, tipo = ?, raza = ?, sexo = ? WHERE login = ?";
 		 
 	    // CONTROLO EL TIPO , LA RAZA , Y EL SEXO
-	    if(p.getTipo() =="guerrero" || p.getTipo()== "mago" || p.getTipo()=="picaro"){
-	    if(p.getRaza()=="elfo" || p.getRaza()== "caballero_oscuro" || p.getRaza()=="nordico" || p.getRaza()== "argoniano"){
-	    if(p.getSexo()== "M" || p.getSexo()== "F"){
-	    	
-		
+	    
 		try {
 			pre = conex.prepareStatement(sql);
 			pre.setString(1, p.getNombre());
@@ -374,9 +426,8 @@ public class DAO implements IDAO {
 		} catch (SQLException e) {
 			System.out.println("Error en la actualización de datos de la BD");
 
-		}
-	    }
-	    }
+		
+	    
 	    }
 		return exito;
 		
