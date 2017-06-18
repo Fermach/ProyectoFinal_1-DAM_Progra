@@ -14,7 +14,7 @@ import Modelo.DTO.Personaje;
 /**
  * JTable de los Personajes que son Picaros de nuestra BD
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class TablaPicaros extends JPanel {
 	private JTable table;

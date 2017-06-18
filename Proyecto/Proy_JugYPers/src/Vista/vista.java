@@ -19,7 +19,7 @@ import javax.swing.JMenuItem;
 /**
  * Frame principal de nuestra vista en el cual añadiremos los demas paneles
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class Vista extends JFrame {
 
@@ -39,8 +39,25 @@ public class Vista extends JFrame {
 	static TablaMagos tmagos = new TablaMagos();
     static TablaPicaros tpicaros = new TablaPicaros();
     static TablaJugadoresAltoNivel tjugnivAlto= new TablaJugadoresAltoNivel();
+    static ErrorInsercion errorInsercion = new ErrorInsercion();
+    static ErrorBorrado errorBorrado = new ErrorBorrado();
     
-    
+	public static ErrorInsercion getErrorInsercion() {
+		return errorInsercion;
+	}
+
+	public static void setErrorInsercion(ErrorInsercion errorInsercion) {
+		Vista.errorInsercion = errorInsercion;
+	}
+
+	public static ErrorBorrado getErrorBorrado() {
+		return errorBorrado;
+	}
+
+	public static void setErrorBorrado(ErrorBorrado errorBorrado) {
+		Vista.errorBorrado = errorBorrado;
+	}
+
 	public TablaMagos getTmagos() {
 		return tmagos;
 	}

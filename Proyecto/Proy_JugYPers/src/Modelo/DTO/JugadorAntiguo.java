@@ -4,7 +4,7 @@ package Modelo.DTO;
  * historial tras el borrado de un jugador de la BD debido al uso de 
  * un Trigger de borrado
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class JugadorAntiguo extends Jugador {
 

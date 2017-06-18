@@ -15,7 +15,7 @@ import javax.swing.JTable;
 /**
  * JTable de los Personajes de nuestra BD
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class TablaPersonajes extends JPanel {
 	private JTable table;

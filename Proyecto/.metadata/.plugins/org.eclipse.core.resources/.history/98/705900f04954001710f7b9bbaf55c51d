@@ -1,0 +1,14 @@
+package Vista;
+
+import javax.swing.JPanel;
+
+public class ErrorBorrado extends JPanel {
+
+	/**
+	 * Create the panel.
+	 */
+	public ErrorBorrado() {
+
+	}
+
+}

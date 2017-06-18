@@ -10,7 +10,6 @@
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="java.io.LineNumberInputStream"/>
 <fullyQualifiedTypeName name="Modelo.DTO.Jugador"/>
-<fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.awt.BorderLayout"/>
@@ -30,4 +29,7 @@
 <fullyQualifiedTypeName name="Controlador.Controlador"/>
 <fullyQualifiedTypeName name="Vista.Vista"/>
 <fullyQualifiedTypeName name="javax.swing.table.DefaultTableModel"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="Vista.ErrorInsercion"/>
+<fullyQualifiedTypeName name="Vista.ErrorBorrado"/>
 </qualifiedTypeNameHistroy>

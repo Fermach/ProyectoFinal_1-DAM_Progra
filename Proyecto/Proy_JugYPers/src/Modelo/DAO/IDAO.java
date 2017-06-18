@@ -8,7 +8,7 @@ import Modelo.DTO.Personaje;
 /**
  * Interfaz del DAO
  * @author Fermach
- *
+ * @version 1.0.
  */
 public interface IDAO {
 

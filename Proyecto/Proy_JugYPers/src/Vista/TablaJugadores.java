@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  * JTable de los jugadores de nuestra BD
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class TablaJugadores extends JPanel {
     

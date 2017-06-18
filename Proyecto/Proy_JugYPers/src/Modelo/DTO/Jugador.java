@@ -2,7 +2,7 @@ package Modelo.DTO;
 /**
  * Modelo de jugador 
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class Jugador {
 

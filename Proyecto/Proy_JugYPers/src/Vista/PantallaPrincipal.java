@@ -14,7 +14,7 @@ import java.awt.Font;
 /**
  * Pantalla principal de nuestra vista
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class PantallaPrincipal extends JPanel {
 	private JTextField textFieldLogin;

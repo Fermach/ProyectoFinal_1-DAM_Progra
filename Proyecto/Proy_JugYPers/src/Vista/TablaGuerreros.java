@@ -14,7 +14,7 @@ import Modelo.DTO.Personaje;
 /**
  * JTable de los personajes que son guerreros
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class TablaGuerreros extends JPanel {
 	private JTable table;

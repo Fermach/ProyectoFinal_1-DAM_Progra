@@ -14,7 +14,7 @@ import Modelo.DTO.Personaje;
 /**
  * JTable de los Personajes que son magos de nuestra BD
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class TablaMagos extends JPanel {
 	private JTable table;

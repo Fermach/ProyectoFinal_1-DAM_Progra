@@ -10,7 +10,7 @@ import org.sqlite.SQLiteConfig;
  * Establece una conexion Singletone para que
  * solo pueda existir una conexion a la bd
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class Conexion {
 

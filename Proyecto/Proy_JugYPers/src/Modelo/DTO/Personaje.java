@@ -2,7 +2,7 @@ package Modelo.DTO;
 /**
  * Modelo de Personaje de la BD
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class Personaje {
 

@@ -15,7 +15,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 /**
  * JTable de los Jugadores Antiguos 
  * @author Fermach
- *
+ * @version 1.0.
  */
 public class TablaHistorial extends JPanel {
 	DAO dao = new DAO();
