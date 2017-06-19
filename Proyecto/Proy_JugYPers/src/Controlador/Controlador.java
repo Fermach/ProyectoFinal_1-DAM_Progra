@@ -108,10 +108,10 @@ import java.sql.Connection;
            if(pe.getRaza().equals("elfo") || pe.getRaza().equals("caballero_oscuro") || pe.getRaza().equals("nordico") || pe.getRaza().equals("argoniano")){
     	   if(pe.getSexo().equals("M") || pe.getSexo().equals("F")){ 
     	   
-		     if(dao.añadirJugador(ju) == true || dao.añadirPersonaje(pe) == true){
+		     if(dao.aÃ±adirJugador(ju) == true | dao.aÃ±adirPersonaje(pe) == true){
 		     listaJugador = dao.listaJugadores();
 		     listaPersonajes =dao.listaPersonajes();
-		     //System.out.println("Jugador y Personajes añadidos");
+		     //System.out.println("Jugador y Personajes aÃ±adidos");
 		     deshabilitarTextField();
 		     }else{
 		    	 System.out.println("Login no valido");
@@ -258,7 +258,7 @@ import java.sql.Connection;
 		vista.getPantallaPrincipal().getBotonAdelante().addActionListener(escuchador);
 		vista.getPantallaPrincipal().getButtonmas().addActionListener(escuchador);
 		vista.getPantallaPrincipal().getBorrarBoton().addActionListener(escuchador);
-		vista.getPantallaPrincipal().getAñadirBoton().addActionListener(escuchador);
+		vista.getPantallaPrincipal().getAÃ±adirBoton().addActionListener(escuchador);
 		vista.getMntmNewMenuMostrarJugadores().addActionListener(escuchador);
 		vista.getMntmJugadoresAntiguos().addActionListener(escuchador);
 		vista.getMntmNewMenuPersonajes().addActionListener(escuchador);
@@ -376,7 +376,7 @@ import java.sql.Connection;
 		   String filas[] = new String[6] ;
 		   String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad", "Fecha"};
 		   vista.getThistorial().setModelo(new DefaultTableModel(null, titulos));
-	       //Recorro la lista de la base de datos y añado cada personaje al modelo
+	       //Recorro la lista de la base de datos y aÃ±ado cada personaje al modelo
 			for (JugadorAntiguo jugador : dao.jugadoresAntiguos()) {
 				
 				filas[0]= jugador.getLogin();
@@ -398,7 +398,7 @@ import java.sql.Connection;
 	      String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
 	      String fila[] = new String[5];
 		  vista.getTpersonajes().setModelo(new DefaultTableModel(null, titulos));
-	      //Recorro la lista de la base de datos y añado cada personaje al modelo
+	      //Recorro la lista de la base de datos y aÃ±ado cada personaje al modelo
 			for (Personaje personaje : dao.listaPersonajes()) {
 				
 				fila[0]= personaje.getNombre();
@@ -419,7 +419,7 @@ import java.sql.Connection;
 	      String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
 	      String fila[] = new String[5];
 		  vista.getTguerreros().setModelo(new DefaultTableModel(null, titulos));
-	      //Recorro la lista de la base de datos y añado cada personaje al modelo
+	      //Recorro la lista de la base de datos y aÃ±ado cada personaje al modelo
 			for (Personaje personaje : dao.listaGuerreros()) {
 				
 				fila[0]= personaje.getNombre();
@@ -441,7 +441,7 @@ import java.sql.Connection;
 	      String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
 	      String fila[] = new String[5];
 		  vista.getTmagos().setModelo(new DefaultTableModel(null, titulos));
-	      //Recorro la lista de la base de datos y añado cada personaje al modelo
+	      //Recorro la lista de la base de datos y aÃ±ado cada personaje al modelo
 			for (Personaje personaje : dao.listaMagos()) {
 				
 				fila[0]= personaje.getNombre();
@@ -462,7 +462,7 @@ import java.sql.Connection;
       String[] titulos ={ "Nombre", "Login" ,"Tipo", "Raza", "Sexo"};
       String fila[] = new String[5];
 	  vista.getTpicaros().setModelo(new DefaultTableModel(null, titulos));
-      //Recorro la lista de la base de datos y añado cada personaje al modelo
+      //Recorro la lista de la base de datos y aÃ±ado cada personaje al modelo
 		for (Personaje personaje : dao.listaPicaros()) {
 			
 			fila[0]= personaje.getNombre();
@@ -483,7 +483,7 @@ import java.sql.Connection;
 	   String filas[] = new String[5] ;
 	   String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad"};
 	   vista.getTjugnivAlto().setModelo(new DefaultTableModel(null, titulos));
-       //Recorro la lista de la base de datos y añado cada personaje al modelo
+       //Recorro la lista de la base de datos y aÃ±ado cada personaje al modelo
 		 for (Jugador jugador : dao.jugadoresNivelAlto()) {
 			
 			filas[0]= jugador.getLogin();
@@ -504,7 +504,7 @@ import java.sql.Connection;
 	   String filas[] = new String[5] ;
 	   String[] titulos ={"Login", "Nombre", "Apellidos", "Nivel", "Nacionalidad"};
 	   vista.getTjugadores().setModelo(new DefaultTableModel(null, titulos));
-       //Recorro la lista de la base de datos y añado cada personaje al modelo
+       //Recorro la lista de la base de datos y aÃ±ado cada personaje al modelo
 		for (Jugador jugador : dao.listaJugadores()) {
 			
 			filas[0]= jugador.getLogin();
