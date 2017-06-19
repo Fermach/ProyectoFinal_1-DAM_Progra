@@ -108,27 +108,13 @@ import java.sql.Connection;
            if(pe.getRaza().equals("elfo") || pe.getRaza().equals("caballero_oscuro") || pe.getRaza().equals("nordico") || pe.getRaza().equals("argoniano")){
     	   if(pe.getSexo().equals("M") || pe.getSexo().equals("F")){ 
     	   
-		     if(dao.añadirJugador(ju) == true || dao.añadirPersonaje(pe) == true){
+		     dao.añadirJugador(ju);
+		     dao.añadirPersonaje(pe);  
 		     listaJugador = dao.listaJugadores();
 		     listaPersonajes =dao.listaPersonajes();
 		     //System.out.println("Jugador y Personajes añadidos");
 		     deshabilitarTextField();
-		     }else{
-		    	 System.out.println("Login no valido");
-		    	   vista.getContentPane().removeAll();
-		    	   vista.getContentPane().add(vista.getErrorInsercion(), BorderLayout.CENTER);
-		    	   vista.repaint();
-		    	   vista.revalidate();
-		    	   deshabilitarTextField();
-		    	   mostrarJugador(contador++);
-		    	   mostrarPersonaje(contador++);
-		    	 
-		    	 
-		     }
-		     
-		     
-		     
-		     
+		   
     	   }else{
     	   System.out.println("Sexo erroneo: debe ser M o F");
     	   vista.getContentPane().removeAll();
